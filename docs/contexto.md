@@ -1,98 +1,79 @@
 # Introdução
 
-No contexto atual em que a sociedade está, a compra de tickets de maneira virtual se torna essencial, trazendo consigo a necessidade de um sistema robusto que consiga lidar com a alta demanda dos consumidores.
+A transformação digital tem sido uma força motriz na modernização da sociedade, especialmente no que diz respeito às compras e agendamentos online. Fatores como praticidade, comodidade e competitividade de preços são os principais impulsionadores dessa tendência, atraindo um número crescente de consumidores para o ambiente digital (Gouvêa, Oliveira e Nakagawa, 2013). No setor de entretenimento, essa mudança é particularmente evidente na compra de ingressos para eventos, onde a demanda por soluções ágeis e eficientes tem se intensificado.
 
-Devido ao aumento de compras de ingressos online a necessidade de se ter um sistema aumenta quando usuários esperam um sistema rápido que não apresente  queda de servidores, travamento e lentidão.
+A evolução tecnológica não apenas minimiza problemas tradicionais, como longas filas e a necessidade de deslocamento até pontos de venda físicos, mas também oferece uma série de vantagens tanto para os consumidores quanto para os empreendedores. Para os clientes, a conveniência de adquirir ingressos de forma rápida e segura, a qualquer hora e de qualquer lugar, é um diferencial significativo. Já para os empreendedores, o uso de plataformas digitais permite a redução substancial de custos operacionais, associados à manutenção de infraestrutura física e à segurança nos pontos de venda.
 
-Para enfrentar esses desafios, a arquitetura de software distribuída surge como uma solução poderosa e eficaz. Ao contrário de uma arquitetura centralizada, uma arquitetura distribuída espalha os componentes do sistema por vários servidores e localizações geográficas, escalabilidade e alta disponibilidade. Esses sistemas são projetados para lidar com picos de tráfego e complexidade operacional, assegurando que o sistema continue a funcionar de maneira eficiente mesmo sob condições extremas.
+Além disso, o avanço das tecnologias de processamento e distribuição de dados, como computação em nuvem e arquiteturas escaláveis, tem possibilitado que plataformas de vendas online suportem um grande volume de transações simultâneas, garantindo uma experiência fluida e sem interrupções para o usuário final. Isso é crucial em períodos de alta demanda, como a venda de ingressos para grandes shows ou eventos esportivos, onde o tempo de resposta e a disponibilidade do serviço são fatores críticos para o sucesso.
 
-A implementação de uma arquitetura distribuída de  vendas de ticket traz consigo não somente a resolução de problemas comuns da arquitetura centralizada, mas também benefícios como: capacidade de escalar dinamicamente, a redução do risco de falhas catastróficas, a melhoria da experiência do usuário e uma segurança aprimorada nas transações.
+Dados de uma pesquisa da Forbes Brasil em 2023 indicam que 63% dos entrevistados já preferem realizar compras em lojas virtuais, com uma projeção de crescimento de 54% para o ano seguinte. Esses números refletem a crescente confiança dos brasileiros nos meios digitais, o que deverá impactar significativamente as vendas de ingressos para eventos. Com a expectativa de que essa preferência continue a crescer, é essencial que plataformas de venda de ingressos estejam preparadas para atender à demanda crescente, garantindo uma experiência de compra eficiente e confiável.
 
-Ademais, o mercado de eventos é altamente competitivo, e a qualidade da experiência do usuário é crucial para o sucesso de uma plataforma de venda de ingressos. Com um sistema distribuído, as empresas podem inovar e se adaptar rapidamente às mudanças do mercado, integrando novas funcionalidades, como sistemas de pagamento emergentes, serviços de recomendação personalizados e integrações com redes sociais e plataformas de streaming.
+- [Procura recorde por ingressos de tour de Taylor Swift faz Ticketmaster cancelar vendas](https://www.cnnbrasil.com.br/entretenimento/procura-recorde-por-ingressos-de-tour-de-taylor-swift-faz-ticketmaster-cancelar-vendas/)
 
-Portanto, adotar uma arquitetura distribuída para a venda de ingresso é uma forma estratégica às necessidades contemporâneas do mercado  Essa abordagem não só suporta grandes volumes de tráfego, mas também posiciona a plataforma como uma solução ágil e preparada para o futuro, capaz de oferecer uma experiência de usuário superior e manter a confiança dos consumidores em um ambiente digital em constante evolução.
+- [Rock in Rio 2024: ingressos da pré-venda esgotam em tempo recorde](https://cultura.uol.com.br/entretenimento/noticias/2024/05/20/10343_rock-in-rio-2024-ingressos-na-pre-venda-esgotam-em-tempo-recorde.html)
 
 ## Problema
 
-A sociedade moderna apresenta a crescente adoção da tecnologia para realizar compras e agendamentos online, em que fatores como praticidade, comodidade e competitividade de preços (Gouvêa, Oliveira e Nakagawa, 2013) levam as pessoas a utilizarem o canal online. Esta prática tem relação direta com a alteração dos hábitos de consumo no setor de entretenimento, como a compra de ingressos.  
+O aumento exponencial na realização de eventos culturais, esportivos, shows e outras atividades de entretenimento tem gerado uma demanda crescente por sistemas de venda de ingressos online. Com essa expansão, surge a necessidade de desenvolver soluções de software que possam garantir vantagens significativas, como alta disponibilidade e escalabilidade. Esses aspectos são cruciais para assegurar que a plataforma possa lidar eficientemente com grandes volumes de acessos simultâneos, especialmente durante períodos de alta demanda, como a abertura de vendas para eventos populares.
 
-A tecnologia possibilita que problemas como filas e a necessidade de deslocamento até o ponto de vendas físicos sejam diminuídos, oferecendo vantagens não apenas aos clientes, mas também aos empreendedores, que economizam com a manutenção da infraestrutura e segurança dos locais de venda. 
+A indisponibilidade ou lentidão em sistemas de vendas online pode resultar em perda de receita, insatisfação do cliente e até mesmo danos à reputação da empresa. Portanto, a capacidade de escalar recursos de maneira dinâmica, para atender a picos de tráfego, e garantir a continuidade do serviço sem interrupções, é fundamental. Além disso, a implementação de estratégias de balanceamento de carga e redundância pode ajudar a distribuir o tráfego de maneira eficiente, minimizando o risco de sobrecarga e falhas no sistema.
 
-De acordo com uma pesquisa realizada pela Forbes Brasil em 2023, 63% das pessoas entrevistadas preferem fazer compras em lojas virtuais, com uma tendência de aumento de 54% para o próximo ano, evidenciando que a maior parte dos brasileiros preferem utilizar meios virtuais para suas compras,podendo afetar diretamente as vendas de ingressos de cinema.
+Esses desafios evidenciam a importância de uma arquitetura de software robusta e flexível, capaz de atender às exigências de um mercado em constante crescimento e evolução.
 
 ## Objetivos
 
 **Geral**: 
-  - Desenvolver e implantar um software para a venda de bilhetes de eventos.
-
+  - Desenvolver uma plataforma de venda de tickets online eficiente e escalável que permita a compra e gerenciamento de ingressos para eventos culturais, esportivos e de entretenimento, oferecendo uma experiência de usuário intuitiva e segura.
 
 **Específicos**:
-  - Criar um sistema com interface intuitiva e responsiva para a compra de ingressos de eventos
-  - Implementar um sistema de pagamentos com múltiplas formas de pagamento
+  - Implementar um sistema de balanceamento de carga e escalabilidade que permita à aplicação gerenciar grandes volumes de acessos simultâneos, garantindo desempenho consistente e alta disponibilidade durante períodos de alta demanda.
+  - Implementar um design responsivo e adaptativo que proporcione uma experiência de usuário otimizada em dispositivos móveis e desktops, garantindo que a aplicação seja totalmente funcional e visualmente atraente em diferentes tamanhos de tela e resoluções.
 
 ## Justificativa
 
-É visível o crescimento exponencial de eventos culturais, esportivos, shows dentre outras. Com isso temos a necessidade de um sistema de software que ofereça vantagens significativas, como disponibilidade e escalabilidade, aspectos fundamentais para receber  grandes volumes de  acessos simultâneos.
+A escolha de desenvolver uma aplicação de venda de tickets online é motivada pela crescente demanda por soluções tecnológicas que acompanhem a evolução do mercado de entretenimento. Com o aumento significativo na realização de eventos culturais, esportivos e shows, as plataformas de venda de ingressos enfrentam desafios crescentes relacionados à escalabilidade, disponibilidade e experiência do usuário. A transformação digital trouxe novas expectativas por parte dos consumidores, que agora exigem processos de compra rápidos, seguros e acessíveis a qualquer momento e de qualquer lugar.
 
-A venda de tickets também envolve transações financeiras  Uma arquitetura distribuída permite a implementação de medidas de segurança mais robustas, como a segmentação de dados e a aplicação de políticas de segurança.
+Trabalhar com essa aplicação específica é essencial não apenas para atender às demandas atuais, mas também para preparar o sistema para o futuro, onde o volume de transações online tende a crescer ainda mais. A implementação de uma arquitetura de software que possa escalar eficientemente e garantir alta disponibilidade é fundamental para evitar perdas financeiras e manter a satisfação do cliente. Além disso, focar em aspectos como a otimização de desempenho, segurança de dados e facilidade de uso são pilares que sustentam o sucesso de qualquer plataforma digital de vendas.
 
-Em suma, a justificativa para o desenvolvimento de um software de venda de tickets com arquitetura distribuída é a necessidade de atender às demandas crescentes do mercado, garantindo alta disponibilidade, escalabilidade, segurança e uma experiência de usuário superior.  
+Ao aprofundar o desenvolvimento em áreas específicas, como a implementação de mecanismos de balanceamento de carga e a utilização de infraestruturas em nuvem, busca-se não apenas criar uma solução eficiente, mas também oferecer uma experiência superior ao usuário final. Essas escolhas são impulsionadas pela necessidade de inovar e garantir que a plataforma possa competir em um mercado cada vez mais competitivo, onde a capacidade de atender grandes volumes de acessos simultâneos pode ser o diferencial entre o sucesso e o fracasso.
+
+A justificativa para esse projeto está enraizada na importância de criar uma solução robusta e escalável, capaz de atender tanto às necessidades imediatas quanto às futuras, proporcionando um serviço confiável e de alta qualidade para os usuários. Ao investir nesse desenvolvimento, estamos não apenas acompanhando as tendências do mercado, mas também contribuindo para a evolução tecnológica e a melhoria contínua das plataformas de vendas online.
 
 ## Público-Alvo
 
-O público alvo de um sistema de software distribuído é vasto, abrangendo desde organizadores de eventos seja eles: pequeno, médio e grande porte, plataformas que oferecem soluções de venda de ingressos, também inclui empresas de tecnologia que desejam integrar soluções de venda de tickets em seus próprios sistemas, os consumidores finais também são um público importante, pois a experiência do usuário final ao adquirir ingressos, seja através de websites ou aplicativos móveis, deve ser otimizada para garantir uma experiência rápida, segura e sem interrupções.
+O público-alvo desta aplicação de venda de tickets online abrange tanto consumidores finais quanto organizadores de eventos. Entre os consumidores, estão pessoas de diferentes faixas etárias e perfis que buscam adquirir ingressos de forma rápida, segura e conveniente, seja para shows, eventos esportivos, peças de teatro ou qualquer outro tipo de evento. Esses usuários valorizam a praticidade de realizar compras online, especialmente em plataformas que ofereçam uma experiência de usuário intuitiva e eficiente.
+
+Além dos consumidores, a aplicação também é direcionada a organizadores e promotores de eventos que necessitam de uma solução robusta para gerenciar a venda de ingressos e lidar com grandes volumes de acessos simultâneos, garantindo que seus eventos sejam bem-sucedidos e acessíveis a um público amplo. Este grupo busca ferramentas confiáveis e escaláveis que possam facilitar o processo de venda e maximizar a satisfação dos seus clientes.
 
 # Especificações do Projeto
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
-
 ### Requisitos Funcionais
 
-| ID     | Descrição do Requisito                          | Prioridade |
-| ------ | ----------------------------------------------- | ---------- |
-| RF-001 | Gestão de usuários (cadastro, login)            | ALTA       |
-| RF-002 | Mecanismos de Acesso e Autorização              | ALTA       |
-| RF-003 | Mecanismo de Gestão de Compras                  | ALTA       |
-| RF-004 | Mecanismo de Gestão de Eventos                  | ALTA       |
+| ID     | Descrição do Requisito                          | Prioridade | Responsável(eis)|
+| ------ | ----------------------------------------------- | ---------- | --------------- |
+| RF-001 | Gestão de usuários                              | ALTA       ||
+| RF-002 | Mecanismos de Gestão de Relatórios              | ALTA       ||
+| RF-003 | Mecanismo de Gestão de Compras                  | ALTA       ||
+| RF-004 | Mecanismo de Gestão de Eventos                  | ALTA       ||
 
 ### Requisitos não Funcionais
 
-| ID      | Descrição do Requisito                                            | Prioridade |
-| ------- | ----------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA      |
-| RNF-002 | O sistema deve ser capaz de gerir requisições em carga            | ALTA       |
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+| ID      | Descrição do Requisito                                                                                                                    | Prioridade |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RNF-001 | A aplicação deve ser capaz de escalar horizontalmente para lidar com grande volume de requisições.                                        | ALTA       |
+| RNF-002 | A aplicação deve garantir uma alta disponibilidade, com um tempo de funcionamento de no mínimo 99,9%.                                     | ALTA       |
+| RNF-003 |A aplicação deve ser otimizada para proporcionar tempos de resposta rápidos, com um tempo de carregamento de página inferior a 2 segundos. | ALTA       |
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|ID| Restrição                                                           |
+|--|-------------------------------------------------------------------- |
+|01| Consumo de APIs de pagamentos para validações de vendas             |
+|02| A aplicação deve ser hospedada em uma infraestrutura de nuvem       |
 
 # Catálogo de Serviços
 
