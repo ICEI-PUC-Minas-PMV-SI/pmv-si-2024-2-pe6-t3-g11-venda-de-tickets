@@ -77,8 +77,88 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+## 1. Serviços de Venda de Ingressos
 
+### 1.1. Compra de Ingressos
+- **Descrição**: Serviço principal para a compra de ingressos para eventos listados na plataforma.
+- **Funcionalidades**:
+  - Pesquisa e navegação por eventos disponíveis.
+  - Seleção de ingressos com diferentes opções (pista, VIP, meia-entrada).
+  - Pagamento seguro via cartões de crédito, débito, boleto bancário, e carteiras digitais.
+  - Recebimento de ingressos eletrônicos via e-mail ou aplicativo.
+  - Armazenamento de ingressos comprados na conta do usuário.
+- **Benefícios**: Facilidade e segurança na compra de ingressos, com várias opções de pagamento.
+
+### 1.2. Gestão de Carrinho de Compras
+- **Descrição**: Serviço que permite ao usuário adicionar e gerenciar múltiplos ingressos antes da finalização da compra.
+- **Funcionalidades**:
+  - Adicionar e remover ingressos do carrinho.
+  - Verificação de disponibilidade em tempo real.
+  - Aplicação de cupons de desconto e promoções.
+  - Cálculo automático de valores totais e taxas adicionais.
+- **Benefícios**: Flexibilidade para o usuário revisar e ajustar sua compra antes de finalizar.
+
+### 1.3. Cancelamento e Reembolso de Ingressos
+- **Descrição**: Serviço que permite o cancelamento de ingressos e solicitação de reembolso, conforme a política do evento.
+- **Funcionalidades**:
+  - Solicitação de cancelamento diretamente no app ou site.
+  - Processamento de reembolsos para o método de pagamento original.
+  - Notificações automáticas sobre o status da solicitação.
+- **Benefícios**: Transparência e facilidade no processo de cancelamento e reembolso.
+
+## 2. Serviços de Gestão de Eventos
+
+### 2.1. Criação de Eventos
+- **Descrição**: Serviço para organizadores de eventos criarem e configurarem eventos na plataforma.
+- **Funcionalidades**:
+  - Definição de detalhes do evento, como nome, descrição, local, data e horário.
+  - Configuração de tipos de ingressos, preços, e quantidade disponível.
+  - Integração com ferramentas de marketing e divulgação, como compartilhamento em redes sociais.
+- **Benefícios**: Flexibilidade e controle total para o organizador na criação e gestão de seus eventos.
+
+### 2.2. Gestão de Vendas de Ingressos
+- **Descrição**: Serviço para monitoramento e gestão das vendas de ingressos em tempo real.
+- **Funcionalidades**:
+  - Relatórios em tempo real sobre o número de ingressos vendidos e disponíveis.
+  - Análise de dados de vendas, incluindo dados demográficos dos compradores.
+  - Ferramentas para ajuste de preços e disponibilidade conforme a demanda.
+- **Benefícios**: Insights valiosos para otimizar as vendas e maximizar a participação no evento.
+
+## 3. Serviços de Conta de Usuário
+
+### 3.1. Cadastro e Autenticação de Usuário
+- **Descrição**: Serviço que permite o cadastro de novos usuários e autenticação de usuários existentes.
+- **Funcionalidades**:
+  - Cadastro via e-mail ou redes sociais.
+  - Login seguro com opções de autenticação multifator.
+  - Recuperação de senha e gerenciamento de perfil.
+- **Benefícios**: Segurança e facilidade de acesso para os usuários da plataforma.
+
+### 3.2. Gestão de Perfil e Preferências
+- **Descrição**: Serviço que permite aos usuários personalizar suas preferências e gerenciar suas informações pessoais.
+- **Funcionalidades**:
+  - Atualização de informações de perfil como nome, e-mail, e métodos de pagamento.
+  - Configuração de preferências de notificação e interesses em tipos de eventos.
+  - Visualização do histórico de compras e ingressos salvos.
+- **Benefícios**: Experiência personalizada e controle total sobre as informações do usuário.
+
+## 4. Serviços de Atendimento ao Cliente
+
+### 4.1. Suporte ao Cliente
+- **Descrição**: Serviço de suporte ao cliente para resolver dúvidas e problemas relacionados à compra de ingressos e uso da plataforma.
+- **Funcionalidades**:
+  - Atendimento via chat ao vivo, e-mail, e central de ajuda.
+  - Resolução de problemas relacionados a compras, acesso a ingressos, e reembolsos.
+  - Base de conhecimento com FAQs e tutoriais.
+- **Benefícios**: Resolução rápida e eficiente de problemas, garantindo satisfação do cliente.
+
+### 4.2. Notificações e Alertas
+- **Descrição**: Serviço de envio de notificações para os usuários sobre atualizações relevantes.
+- **Funcionalidades**:
+  - Notificações de confirmação de compra, alterações de evento, e lembretes.
+  - Alertas sobre início de vendas, promoções, e eventos próximos.
+  - Personalização de preferências de notificação pelo usuário.
+- **Benefícios**: Mantém os usuários informados e engajados com os eventos e a plataforma.
 # Arquitetura da Solução
 
 Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
