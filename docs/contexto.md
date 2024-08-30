@@ -167,17 +167,17 @@ A arquitetura de software apresentada é estruturada em três camadas (Three-Tie
 Camada de Apresentação (Presentation Layer):
 Esta camada é responsável pela interface do usuário e a interação com o cliente. Na imagem, a camada de apresentação é composta por duas partes:
 
-Single Page Application (SPA): Uma aplicação web de página única construida usando React, que permite uma experiência de usuário dinâmica e sem recarregamento de página, oferecendo um desempenho mais eficiente e uma melhor experiência de usuário.
+- Single Page Application (SPA): Uma aplicação web de página única construida usando React, que permite uma experiência de usuário dinâmica e sem recarregamento de página, oferecendo um desempenho mais eficiente e uma melhor experiência de usuário.
 
-Mobile Application: Uma aplicação móvel desenvolvida com Flutter, um framework que permite criar aplicações nativas para iOS e Android a partir de uma única base de código, proporcionando uma interface rica e uma experiência de usuário otimizada para dispositivos móveis.
+- Mobile Application: Uma aplicação móvel desenvolvida com Flutter, um framework que permite criar aplicações nativas para iOS e Android a partir de uma única base de código, proporcionando uma interface rica e uma experiência de usuário otimizada para dispositivos móveis.
 
 Camada de Aplicação (Application Layer):
 Esta é a camada de lógica de negócios, onde estão implementadas as regras e funcionalidades principais da aplicação. Na imagem, a camada de aplicação é construída em Java, o que sugere uma estrutura robusta e orientada a objetos. Dentro desta camada, existem vários módulos que representam diferentes funcionalidades da aplicação:
 
-Módulo de Gestão de Usuários (User Management Module): Gerencia a criação, atualização e exclusão dos usuários.
-Módulo de Relatórios (Reporting Module): Gera e gerencia relatórios baseados nos dados da aplicação.
-Módulo de Gestão de Eventos (Event Management Module): Lida com a criação, atualização e cancelamento de eventos.
-Módulo de Gestão de Compras (Purchasing Management Module): Gerencia o processo de compra da aplicação. 
+- Módulo de Gestão de Usuários (User Management Module): Gerencia a criação, atualização e exclusão dos usuários.
+- Módulo de Relatórios (Reporting Module): Gera e gerencia relatórios baseados nos dados da aplicação.
+- Módulo de Gestão de Eventos (Event Management Module): Lida com a criação, atualização e cancelamento de eventos.
+- Módulo de Gestão de Compras (Purchasing Management Module): Gerencia o processo de compra da aplicação. 
 
 Camada de Persistência (Persistence Layer):
 Essa camada cuida do armazenamento e recuperação de dados. Na arquitetura mostrada, usamos o banco de dados MySQL, que é confiável e eficiente para gerenciar dados estruturados. A camada de aplicação acessa a camada de persistência para salvar ou buscar as informações necessárias para o funcionamento do sistema.
