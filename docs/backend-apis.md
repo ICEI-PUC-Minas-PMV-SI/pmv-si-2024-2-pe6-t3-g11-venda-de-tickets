@@ -25,7 +25,7 @@ Os principais objetivos da API de gestão de eventos e emissão de ingressos sã
 ![arq](img/software-architecture.jpeg)
 
 ## Modelagem da Aplicação
-![mod](modelagem.jpg.jpeg)
+![mod](img/modelagem.jpeg)
 
 
 ## Fluxo de Dados
@@ -54,17 +54,22 @@ Os principais objetivos da API de gestão de eventos e emissão de ingressos sã
 As principais tecnologias utilizadas no desenvolvimento da API para gestão de eventos e emissão de ingressos são:
 
  - **Java**: Linguagem de programação robusta e amplamente utilizada para desenvolvimento de aplicações de backend, oferecendo alta performance e segurança.
+ - 
  - **Spring Boot**: Framework que facilita a criação de aplicações Java, fornecendo uma estrutura modular e escalável, ideal para o desenvolvimento de APIs RESTful.
+
  - **Swagger**: Ferramenta para documentação e design de APIs, que permite a criação de especificações claras e interativas, facilitando a integração e o uso da API por desenvolvedores externos.
+ - 
  - **Hibernate**: Framework de ORM (Object-Relational Mapping) que simplifica a interação com bancos de dados, reduzindo a complexidade do código SQL e melhorando a eficiência no gerenciamento de dados.
+ - 
  - **PostgreSQL**: Sistema de gerenciamento de banco de dados relacional, conhecido por sua robustez, escalabilidade e conformidade com padrões SQL, ideal para armazenar e gerenciar os dados dos eventos e ingressos.
+ - 
  - **JWT (JSON Web Tokens)**: Tecnologia utilizada para autenticação e autorização, proporcionando uma forma segura e eficiente de gerenciar sessões de usuários, garantindo que apenas usuários autenticados acessem os recursos da API.
+ - 
 Essas tecnologias foram escolhidas pela sua confiabilidade, eficiência e capacidade de suportar o crescimento da aplicação, garantindo uma API escalável e de fácil manutenção.
 
 ## API Endpoints
 
-    ```
-   {
+```{
   "openapi": "3.0.1",
   "info": {
     "title": "API TickTag",
@@ -571,8 +576,7 @@ Essas tecnologias foram escolhidas pela sua confiabilidade, eficiência e capaci
       }
     }
   }
-}
-    ```
+}```
 
 
 ## Considerações de Segurança
