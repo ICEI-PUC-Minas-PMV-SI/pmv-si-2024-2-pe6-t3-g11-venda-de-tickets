@@ -1,24 +1,31 @@
 # APIs e Web Services
 
-O planejamento de uma aplicação de APIS Web é uma etapa fundamental para o sucesso do projeto. Ao planejar adequadamente, você pode evitar muitos problemas e garantir que a sua API seja segura, escalável e eficiente.
+Uma API para gestão de eventos e emissão de ingressos é projetada para facilitar o gerenciamento de eventos, desde o cadastro até a emissão de ingressos. Com essa API, os organizadores podem registrar eventos, definir detalhes como data, local, capacidade, e tipos de ingressos. Ela permite o controle de lotação, a emissão e o envio de ingressos, além de oferecer funcionalidades para a gestão de participantes, como check-ins e validação de ingressos. 
 
-Aqui estão algumas etapas importantes que devem ser consideradas no planejamento de uma aplicação de APIS Web.
-
-[Inclua uma breve descrição do projeto.]
+Focada em ser segura e escalável, a API é ideal para diversos tipos de eventos, proporcionando uma interface intuitiva para organizadores e participantes, otimizando o controle e a operação do evento.
 
 ## Objetivos da API
 
-O primeiro passo é definir os objetivos da sua API. O que você espera alcançar com ela? Você quer que ela seja usada por clientes externos ou apenas por aplicações internas? Quais são os recursos que a API deve fornecer?
+Os principais objetivos da API de gestão de eventos e emissão de ingressos são:
 
-[Inclua os objetivos da sua api.]
+- **Facilitar o Gerenciamento de Eventos**: Permitir que organizadores registrem e atualizem informações de eventos de forma simples, incluindo detalhes como data, local, lotação, e tipos de ingressos disponíveis.
 
+- **Emitir e Gerenciar Ingressos**: Oferecer funcionalidades para a emissão, controle e validação de ingressos, possibilitando o gerenciamento eficiente dos participantes e garantindo que a lotação dos eventos seja respeitada.
+
+- **Controlar Check-ins e Presenças**: Integrar funcionalidades de check-in para a validação de ingressos na entrada dos eventos, otimizando o controle de acesso e a segurança.
+
+- **Fornecer Relatórios e Estatísticas**: Disponibilizar dados em tempo real sobre o status dos ingressos emitidos, lotação, e outras métricas relevantes para ajudar na tomada de decisões.
+
+- **Segurança e Escalabilidade**: Garantir que a API seja segura, com autenticação e controle de acesso, e que suporte o crescimento da demanda, podendo ser utilizada em eventos de diferentes portes.
+
+- **Uso Interno e Externo**: Ser utilizada tanto por aplicações internas de gerenciamento quanto por parceiros externos que desejem integrar suas próprias soluções de gestão de eventos, expandindo o alcance e a funcionalidade do sistema.
 
 ## Arquitetura
 
-[Descrição da arquitetura das APIs, incluindo os componentes e suas interações.]
+![arq](img/software-architecture.jpeg)
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
+![mod](modelagem.jpg.jpeg)
 
 
 ## Fluxo de Dados
@@ -27,51 +34,560 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 
 ## Requisitos Funcionais
 
-[Liste os principais requisitos funcionais da aplicação.]
+| ID     | Descrição do Requisito                          | 
+| ------ | ----------------------------------------------- | 
+| RF-001 | Gestão de usuários                              | 
+| RF-002 | Mecanismos de Gestão de Relatórios              |
+| RF-003 | Mecanismo de Gestão de Compras                  | 
+| RF-004 | Mecanismo de Gestão de Eventos                  | 
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
+| ID      | Descrição do Requisito                                                                                                                    | 
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- | 
+| RNF-001 | A aplicaçã deve utilizar o autenticador JWT                                                                                               | 
+| RNF-002 | A aplicação deve utilizar banco de dados relacional.                                     | 
+| RNF-003 |A aplicação deve ser otimizada para proporcionar tempos de resposta rápidos, com um tempo de carregamento de página inferior a 2 segundos. | 
 
 ## Tecnologias Utilizadas
 
-Existem muitas tecnologias diferentes que podem ser usadas para desenvolver APIs Web. A tecnologia certa para o seu projeto dependerá dos seus objetivos, dos seus clientes e dos recursos que a API deve fornecer.
+As principais tecnologias utilizadas no desenvolvimento da API para gestão de eventos e emissão de ingressos são:
 
-[Lista das tecnologias principais que serão utilizadas no projeto.]
+ - **Java**: Linguagem de programação robusta e amplamente utilizada para desenvolvimento de aplicações de backend, oferecendo alta performance e segurança.
+ - **Spring Boot**: Framework que facilita a criação de aplicações Java, fornecendo uma estrutura modular e escalável, ideal para o desenvolvimento de APIs RESTful.
+ - **Swagger**: Ferramenta para documentação e design de APIs, que permite a criação de especificações claras e interativas, facilitando a integração e o uso da API por desenvolvedores externos.
+ - **Hibernate**: Framework de ORM (Object-Relational Mapping) que simplifica a interação com bancos de dados, reduzindo a complexidade do código SQL e melhorando a eficiência no gerenciamento de dados.
+ - **PostgreSQL**: Sistema de gerenciamento de banco de dados relacional, conhecido por sua robustez, escalabilidade e conformidade com padrões SQL, ideal para armazenar e gerenciar os dados dos eventos e ingressos.
+ - **JWT (JSON Web Tokens)**: Tecnologia utilizada para autenticação e autorização, proporcionando uma forma segura e eficiente de gerenciar sessões de usuários, garantindo que apenas usuários autenticados acessem os recursos da API.
+Essas tecnologias foram escolhidas pela sua confiabilidade, eficiência e capacidade de suportar o crescimento da aplicação, garantindo uma API escalável e de fácil manutenção.
 
 ## API Endpoints
 
-[Liste os principais endpoints da API, incluindo as operações disponíveis, os parâmetros esperados e as respostas retornadas.]
-
-### Endpoint 1
-- Método: GET
-- URL: /endpoint1
-- Parâmetros:
-  - param1: [descrição]
-- Resposta:
-  - Sucesso (200 OK)
     ```
+   {
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API TickTag",
+    "description": "Serviço relacionados a gestão de tickets",
+    "termsOfService": "",
+    "license": {
+      "name": "Apache 2.0",
+      "url": ""
+    },
+    "version": "v1"
+  },
+  "servers": [
     {
-      "message": "Success",
-      "data": {
-        ...
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/evento": {
+      "get": {
+        "tags": [
+          "evento-rest-ctr"
+        ],
+        "operationId": "findAll",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseListEventoVO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "evento-rest-ctr"
+        ],
+        "operationId": "update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventoVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseEventoVO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "evento-rest-ctr"
+        ],
+        "operationId": "save",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventoVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseEventoVO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/top-events-by-capacity": {
+      "get": {
+        "tags": [
+          "reporting-controller"
+        ],
+        "operationId": "getTopEventosPorCapacidade",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/event-distribution-by-date": {
+      "get": {
+        "tags": [
+          "reporting-controller"
+        ],
+        "operationId": "getDistribuicaoEventosPorData",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/event-capacity-utilization": {
+      "get": {
+        "tags": [
+          "reporting-controller"
+        ],
+        "operationId": "getUtilizacaoCapacidadeEvento",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/event-age-classification-breakdown": {
+      "get": {
+        "tags": [
+          "reporting-controller"
+        ],
+        "operationId": "getClassificacaoEtariaEventos",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/average-event-capacity": {
+      "get": {
+        "tags": [
+          "reporting-controller"
+        ],
+        "operationId": "getCapacidadeMediaEvento",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evento/id/{idEvento}": {
+      "get": {
+        "tags": [
+          "evento-rest-ctr"
+        ],
+        "operationId": "findById",
+        "parameters": [
+          {
+            "name": "idEvento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseEventoVO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evento/filtro": {
+      "get": {
+        "tags": [
+          "evento-rest-ctr"
+        ],
+        "operationId": "findByParams",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/EventoFilterDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseListEventoVO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evento/{idEvento}": {
+      "delete": {
+        "tags": [
+          "evento-rest-ctr"
+        ],
+        "operationId": "deleteById",
+        "parameters": [
+          {
+            "name": "idEvento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseString"
+                }
+              }
+            }
+          }
+        }
       }
     }
-    ```
-  - Erro (4XX, 5XX)
-    ```
-    {
-      "message": "Error",
-      "error": {
-        ...
+  },
+  "components": {
+    "schemas": {
+      "EnderecoVO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idEvento": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nomeLogradouro": {
+            "type": "string"
+          },
+          "tipoLogradouro": {
+            "type": "string"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "complemento": {
+            "type": "string"
+          },
+          "bairro": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "uf": {
+            "type": "string"
+          },
+          "nomeEspaco": {
+            "type": "string"
+          }
+        }
+      },
+      "EventoVO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nomeEvento": {
+            "type": "string"
+          },
+          "statusEvento": {
+            "type": "string"
+          },
+          "dataEvento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "enderecoVO": {
+            "$ref": "#/components/schemas/EnderecoVO"
+          },
+          "tickets": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TipoTicketVO"
+            }
+          },
+          "lotacaoMaxima": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "classificacaoIdade": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "TipoTicketVO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idEvento": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lote": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "qtdLote": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "valorTicket": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorMeiaTicket": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipoTicket": {
+            "type": "string"
+          },
+          "statusTicket": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponseEventoVO": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventoVO"
+          }
+        }
+      },
+      "ApiResponseListEventoVO": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventoVO"
+            }
+          }
+        }
+      },
+      "EventoFilterDTO": {
+        "type": "object",
+        "properties": {
+          "nomeEvento": {
+            "type": "string"
+          },
+          "statusEvento": {
+            "type": "string"
+          },
+          "dataEvento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "classificacaoIdade": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lotacaoMaxima": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ApiResponseString": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          }
+        }
       }
     }
+  }
+}
     ```
 
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+A segurança da API de gestão de eventos e emissão de ingressos será garantida principalmente através do uso de JWT (JSON Web Tokens), que proporciona uma forma simples e eficaz de autenticação e autorização. As principais considerações de segurança incluem:
+
+- **Autenticação com JWT**: JWT será utilizado para autenticar usuários, gerando tokens seguros que contêm as credenciais e permissões do usuário. Esses tokens serão incluídos nas requisições à API, garantindo que apenas usuários autenticados possam acessar os recursos.
+
+- **Autorização de Acesso**: O JWT também será responsável por controlar as permissões de acesso dos usuários, verificando se o token inclui as credenciais necessárias para a execução de operações específicas, como emissão de ingressos ou acesso a relatórios.
+
+ - **Expiração de Tokens**: Os tokens terão uma data de expiração para limitar o tempo de sessão e reduzir o risco de uso indevido, exigindo que os usuários se autentiquem novamente após o vencimento do token.
+
+ - **Proteção dos Dados do Token**: Os JWTs serão assinados para garantir que não possam ser alterados ou forjados, proporcionando uma camada adicional de segurança e autenticidade.
+
+Essas medidas, centradas no uso de JWT, garantem uma autenticação e autorização simples e eficaz, adequadas para as necessidades da API sem complexidade adicional.
 
 ## Implantação
 
@@ -95,4 +611,4 @@ Existem muitas tecnologias diferentes que podem ser usadas para desenvolver APIs
 
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+* [REST API's RESTFul do 0 à AWS c. Spring Boot 3](https://www.udemy.com/course/restful-apis-do-0-a-nuvem-com-springboot-e-docker/?kw=Api+restful&src=sac&couponCode=24T4MT92724A)
