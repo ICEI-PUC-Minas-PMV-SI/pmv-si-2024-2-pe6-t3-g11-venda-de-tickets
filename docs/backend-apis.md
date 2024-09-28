@@ -606,13 +606,74 @@ Essas medidas, centradas no uso de JWT, garantem uma autenticação e autorizaç
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+A estratégia de testes para a API de gestão de eventos e emissão de ingressos foi desenhada com foco na cobertura dos requisitos funcionais e na validação da integração entre componentes. Os principais tipos de testes realizados foram unitários e de integração, enquanto testes de carga e automação não foram implementados nesta fase.
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+### Estratégia de Teste
+
+1. **Criação de Casos de Teste**: Foram criados casos de teste para cobrir todos os requisitos funcionais da API, garantindo que as operações básicas de criação, atualização, exclusão e recuperação de dados funcionem conforme esperado.
+   
+2. **Testes Unitários**: Testes foram implementados para validar funcionalidades isoladas, como as operações de relatórios e a manipulação de dados de eventos. A biblioteca Mockito foi utilizada para simular interações com o repositório de dados e outros componentes, permitindo testar o comportamento das funções de maneira eficiente. *Exemplo de teste unitário*:
+```java
+@Test
+public void testGetUtilizacaoCapacidadeEvento() {
+    // Mokca o repositório
+    EventoVO event1 = new EventoVO();
+    event1.setNomeEvento("Event 1");
+    event1.setLotacaoMaxima(100L);
+
+    when(eventoRepository.findAll()).thenReturn(List.of(event1));
+
+    // Chama o serviço
+    List<Map<String, Object>> result = reportingService.getUtilizacaoCapacidadeEvento();
+
+    // Valida resultado
+    assertEquals("Event 1", result.get(0).get("nomeEvento"));
+}
+```
+3. **Testes de Integração**: Foram realizados testes para validar a integração entre os controladores da API e o serviço de relatórios, utilizando o MockMvc do Spring Boot. Os testes simularam requisições HTTP e validaram a resposta JSON, garantindo que a API funcione corretamente quando integrada com os serviços internos. *Exemplo de teste de integração*:
+```java
+@Test
+public void testGetTopEventosPorCapacidade() throws Exception {
+    // Mocka a resposta
+    when(reportingService.getTopEventosPorCapacidade(2)).thenReturn(mockResponse);
+
+    // Solicitacao GET
+    mockMvc.perform(get("/reports/top-events-by-capacity?limit=2"))
+           .andExpect(status().isOk())
+           .andExpect(jsonPath("$[0].nomeEvento").value("Event 1"));
+}
+```
+4. **Testes de Carga**: Não foram realizados testes de carga nesta fase. Este tipo de teste pode ser implementado posteriormente para avaliar o desempenho da API sob alto tráfego e garantir tempos de resposta adequados.
+5. **Ferramentas Utilizadas**: As ferramentas principais utilizadas foram:
+ - **JUnit 5** para testes unitários.
+ - **Mockito** para criar mocks e simular comportamentos em testes unitários.
+ - **MockMvc** para realizar testes de integração, simulando chamadas HTTP na API.
+
+6. **Capturas de telas**
+
+As imagens a seguir mostram as requisições e respostas HTTP para os endpoints testados, demonstrando o comportamento da API em diferentes cenários.
+
+### 1. Utilização de Capacidade de Eventos
+Esta requisição foi feita ao endpoint `/reports/event-capacity-utilization`, retornando a utilização da capacidade dos eventos.
+
+![Utilização de Capacidade - JSON](img/all_events_json.png)
+![Utilização de Capacidade - Requisição](img/all_events.png)
+
+### 2. Distribuição de Eventos por Data
+Aqui, vemos a distribuição de eventos por data a partir do endpoint `/reports/event-distribution-by-date`.
+
+![Distribuição de Eventos por Data](img/eventos_by_date.png)
+
+### 3. Criação de Eventos
+A requisição abaixo mostra a criação de um evento no endpoint `/reports/create-event`, com a resposta de sucesso.
+
+![Criação de Evento](img/post_create_event.png)
+
+### 4. Testes unitários
+
+Os testes unitários cobriram diversas funcionalidades da API, verificando individualmente a lógica de cada serviço. A imagem a seguir mostra os resultados dos testes, indicando que todas as funções testadas passaram.
+
+![Resultados dos Testes Unitários](img/teste_unitario.png)
 
 # Referências
 
