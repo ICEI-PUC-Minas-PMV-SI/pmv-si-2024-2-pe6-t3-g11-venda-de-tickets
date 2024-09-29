@@ -649,27 +649,27 @@ public void testGetTopEventosPorCapacidade() throws Exception {
  - **Mockito** para criar mocks e simular comportamentos em testes unitários.
  - **MockMvc** para realizar testes de integração, simulando chamadas HTTP na API.
 
-6. **Capturas de telas**
+### Resultado
 
 As imagens a seguir mostram as requisições e respostas HTTP para os endpoints testados, demonstrando o comportamento da API em diferentes cenários.
 
-### 1. Utilização de Capacidade de Eventos
+#### 1. Utilização de Capacidade de Eventos
 Esta requisição foi feita ao endpoint `/reports/event-capacity-utilization`, retornando a utilização da capacidade dos eventos.
 
 ![Utilização de Capacidade - JSON](img/all_events_json.png)
 ![Utilização de Capacidade - Requisição](img/all_events.png)
 
-### 2. Distribuição de Eventos por Data
+#### 2. Distribuição de Eventos por Data
 Aqui, vemos a distribuição de eventos por data a partir do endpoint `/reports/event-distribution-by-date`.
 
 ![Distribuição de Eventos por Data](img/eventos_by_date.png)
 
-### 3. Criação de Eventos
+#### 3. Criação de Eventos
 A requisição abaixo mostra a criação de um evento no endpoint `/reports/create-event`, com a resposta de sucesso.
 
 ![Criação de Evento](img/post_create_event.png)
 
-### 4. Testes unitários
+#### 4. Testes unitários
 
 Os testes unitários cobriram diversas funcionalidades da API, verificando individualmente a lógica de cada serviço. A imagem a seguir mostra os resultados dos testes, indicando que todas as funções testadas passaram.
 
