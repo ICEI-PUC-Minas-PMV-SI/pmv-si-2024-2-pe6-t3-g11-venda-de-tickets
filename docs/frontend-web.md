@@ -41,10 +41,40 @@ Página de Pagamento: Formulário para inserção de dados de pagamento com inte
 Confirmação de Compra: Tela de sucesso com detalhes da compra e acesso aos ingressos digitais.
 
 
-### Wireframes
+## Wireframes
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
 
-### Design Visual
+### Página Inicial
+
+![arq](img/home.png)
+
+### Catálogo de Tickets 
+
+Esta é a página de catálogo, onde os usuários podem navegar por diferentes eventos disponíveis para compra de ingressos. Na lateral esquerda, há um painel de filtros para facilitar a pesquisa do usuário. Cada item do catálogo é exibido em formato de card, com uma imagem do evento, título, lotação maxima, status e classificação etária além de endereço data.
+
+![arq](img/catalogo.png)
+
+### Detalhes do Evento
+
+![arq](img/evento.png)
+
+### Registro
+
+![arq](img/registro.png)
+
+### Perfil
+
+![arq](img/perfil.png)
+
+### Contato
+
+![arq](img/contato.png)
+
+### Politicas de Privacidade
+
+![arq](img/politica.png)
+
+## Design Visual
 [Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
 
 ### Layout Responsivo
@@ -52,7 +82,7 @@ Confirmação de Compra: Tela de sucesso com detalhes da compra e acesso aos ing
 
 O layout será projetado para se adaptar a qualquer dispositivo, desde desktops até smartphones. Grid Flexível e Media Queries serão usados para ajustar o conteúdo de acordo com o tamanho da tela, garantindo que o processo de compra seja simples e acessível em dispositivos móveis.
 
-### Interações do Usuário
+## Interações do Usuário
 [Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
 
 As interações do usuário serão baseadas em transições suaves e feedback visual. Quando um usuário adicionar um ingresso ao carrinho, haverá uma animação sutil indicando a ação bem-sucedida. No processo de pagamento, validações de formulário em tempo real garantirão que os dados sejam inseridos corretamente antes da conclusão.
@@ -95,6 +125,54 @@ Permitir a seleção de ingressos e adicionar ao carrinho de compras.
 3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
 4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
 5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+
+### 1. Catálogo
+
+### 1.1 Testes Unitários
+
+Teste Cartao Evento:
+
+Este teste assegura que o componente CartaoEvento exibe corretamente as informações principais do evento, incluindo nome, cidade e endereço, na interface do usuário.
+
+![arq](img/CartaoEvento-teste.png)
+
+
+Teste de Renderização e Interatividade do Componente FiltroEventos:
+
+Este teste verifica se o componente FiltroEventos renderiza corretamente os filtros com seus respectivos rótulos e se chama o método onApply ao clicar no botão de aplicação dos filtros.
+
+![arq](img/FiltroEvento-teste.png)
+
+
+Teste de Renderização do Componente ListaEventos:
+
+Este teste verifica se o componente ListaEventos renderiza corretamente os cartões de eventos, exibindo informações básicas, como o nome do evento, conforme esperado na interface.
+
+![arq](img/ListaEVentos-teste.png)
+
+Teste de Aplicação de Filtro de Data no Componente Catalogo:
+
+Este teste verifica se o componente Catalogo aplica corretamente um filtro de data, chamando a função fetchPublicData com os parâmetros esperados e exibindo apenas os eventos que correspondem ao filtro aplicado.
+
+![arq](img/Catalogo-teste.png)
+
+
+### 1.2 Testes de Integração
+
+Teste de Aplicação de Múltiplos Filtros e Resultados no Componente Catalogo.
+
+Esses testes verificam:
+
+A aplicação de múltiplos filtros, como "Classificação de Idade" e "Status", garantindo que fetchPublicData seja chamado com os parâmetros corretos e que os eventos correspondentes sejam exibidos.
+O comportamento quando filtros são aplicados sem resultados correspondentes, confirmando que a mensagem "Nenhum evento encontrado" é exibida quando nenhum evento atende aos critérios.
+
+![arq](img/CatalogoX-teste.png)
+
+Teste de Aplicação e Limpeza de Filtros no Componente Catalogo
+
+Este teste valida a funcionalidade de aplicar e limpar filtros no componente `Catalogo`. Ele verifica se, ao aplicar o filtro de "Status" (definido como "ativo"), apenas os eventos correspondentes são exibidos, e se, ao limpar os filtros, todos os eventos retornam à lista. O teste assegura que as chamadas para `fetchPublicData` são feitas com os parâmetros corretos em cada etapa.
+
+![arq](img/CatalogoY.png)
 
 # Referências
 
