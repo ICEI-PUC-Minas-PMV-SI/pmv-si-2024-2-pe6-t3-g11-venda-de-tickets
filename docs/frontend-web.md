@@ -233,36 +233,79 @@ O fluxo de dados começa com o usuário enviando uma solicitação, como login, 
 
 ## Implantação
 
-Para implantar a aplicação distribuída em um ambiente de produção usando Render.com, com Docker para o backend e banco de dados PostgreSQL, siga os passos abaixo:
+A aplicação **Ticket-Tag** foi implantada em um ambiente de produção usando **Render.com**, com Docker para o backend e NGINX para servir o frontend. O banco de dados **PostgreSQL** também foi configurado na plataforma Render, integrando-se ao backend. Abaixo está o resumo do processo de implantação:
 
-1. **Definição de Requisitos de Hardware e Software**
+### 1. Requisitos de Hardware e Software
 
-   - **Backend**: Uma instância com capacidade suficiente para suportar o backend em Spring e a carga de usuários esperada. Em Render, configure uma instância que suporte Docker, com pelo menos 512 MB de RAM e armazenamento conforme o volume de dados esperado.
-   - **Banco de Dados**: Configure uma instância de PostgreSQL com Render ou utilize o serviço de banco de dados nativo oferecido pela plataforma.
-   - **Frontend**: Capacidade para servir React (SPA) via servidor estático, usando a hospedagem de frontend do Render.
+- **Backend**: Configurado em uma instância Docker adequada para executar a aplicação em Node.js e o framework Spring, ajustando RAM e armazenamento para suportar a carga esperada.
+- **Banco de Dados**: Configurado usando **PostgreSQL** como serviço em Render, permitindo integração direta e segura com o backend.
+- **Frontend**: Configurado para ser servido via **NGINX** em um contêiner Docker separado, após build do projeto React.
 
-2. **Configuração da Plataforma de Hospedagem (Render.com)**
+### 2. Configuração no Render
 
-   - **Backend**: Crie um serviço no Render para o backend, selecionando “Web Service” e utilizando o repositório do GitHub (ou GitLab) conectado. No campo Dockerfile Path, insira o caminho para o Dockerfile do backend. Configure variáveis de ambiente, como `DATABASE_URL`, `JWT_SECRET`, e outras específicas ao ambiente de produção.
-   - **Frontend**: Configure um novo “Static Site” no Render para servir o React frontend. Conecte o repositório do frontend e especifique o comando de build (`npm run build`) e o diretório de publicação (`build/`).
-   - **Banco de Dados**: Em Render, adicione uma instância PostgreSQL e obtenha o URL de conexão, configurando-o como a variável `DATABASE_URL` no backend.
+- **Backend**: Configurado como serviço Web Service no Render, usando o Dockerfile personalizado para build e execução da aplicação. Variáveis de ambiente, como `DATABASE_URL` e `JWT_SECRET`, foram definidas diretamente no painel do Render para atender aos requisitos de produção.
+  
+- **Frontend**: O frontend React foi compilado em uma imagem Docker leve com **NGINX**. O Dockerfile define o processo de build em uma imagem Node.js e serve o aplicativo via NGINX. O comando `npm run build` foi utilizado para gerar o diretório `build/`, que foi copiado para o diretório do NGINX para servir a aplicação na porta 80.
 
-3. **Configuração do Ambiente de Produção**
+- **Exemplo do Dockerfile do Frontend**:
+  
+  ```dockerfile
+  # Use a imagem base do Node.js
+  FROM node:17-alpine AS build
 
-   - **Variáveis de Ambiente**: No painel de cada serviço (backend, frontend, e banco de dados), adicione variáveis de ambiente de produção, incluindo URLs, chaves de autenticação e tokens JWT.
-   - **Dependências**: Render instala automaticamente as dependências listadas nos arquivos Dockerfile (backend) ou `package.json` (frontend). Verifique se todos os pacotes estão atualizados e compatíveis com o ambiente de produção.
+  # Defina o diretório de trabalho
+  WORKDIR /app
 
-4. **Deploy da Aplicação**
+  # Copie o package.json e o package-lock.json
+  COPY package*.json ./
 
-   - **Backend**: Render detecta automaticamente mudanças no repositório e realiza o build de uma nova imagem Docker conforme configurado no Dockerfile. Monitore o log de build para assegurar que o deploy ocorreu sem erros.
-   - **Frontend**: Render cria um site estático para o frontend após o build. Teste a URL gerada para confirmar o carregamento correto da SPA.
-   - **Banco de Dados**: Conecte o backend ao PostgreSQL no Render e teste a conexão usando comandos simples de CRUD via API para confirmar que a comunicação está funcional.
+  # Instale as dependências
+  RUN npm install
 
-5. **Testes de Validação em Produção**
-   - **Teste de Funcionalidade**: Acesse as rotas principais do frontend e backend para validar que o aplicativo está funcionando como esperado.
-   - **Testes de Integração**: Realize testes para garantir que o frontend se comunica corretamente com o backend e que o backend acessa o banco de dados sem problemas.
-   - **Testes de Segurança**: Verifique a autenticação JWT e o armazenamento seguro de tokens, confirmando que apenas usuários autenticados acessam as rotas protegidas.
-   - **Teste de Escalabilidade**: Simule carga no backend e banco de dados para garantir que a aplicação lida bem com vários usuários simultâneos.
+  # Copie o restante do código
+  COPY . .
+
+  # Compile o projeto
+  RUN npm run build
+
+  # Use uma imagem leve para servir a aplicação
+  FROM nginx:alpine
+
+  # Copie os arquivos de build para o NGINX
+  COPY --from=build /app/build /usr/share/nginx/html
+
+  # Exponha a porta 80
+  EXPOSE 80
+
+  # Comando para iniciar o NGINX
+  CMD ["nginx", "-g", "daemon off;"]
+  ```
+
+- **Banco de Dados**: PostgreSQL foi configurado em Render, e a variável `DATABASE_URL` foi disponibilizada para o backend, permitindo conexão segura e direta com o banco.
+
+### 3. Configuração de Ambiente e Dependências
+
+- **Variáveis de Ambiente**: O `REACT_APP_API_URL` no frontend foi configurado para apontar ao URL do backend em produção (`https://ticktag-bxlk.onrender.com`), assegurando que todas as requisições do frontend sejam direcionadas corretamente.
+
+  ```plaintext
+  REACT_APP_API_URL=https://ticktag-bxlk.onrender.com
+  ```
+
+- **Dependências**: Dependências do frontend foram gerenciadas via `npm install`, enquanto o backend usou as dependências listadas no Dockerfile e foram automaticamente gerenciadas durante o build.
+
+### 4. Deploy e Testes
+
+- **Backend**: Render realizou o build automático das imagens Docker para backend e frontend conforme o Dockerfile. Logs foram revisados para assegurar que o deploy ocorreu sem erros.
+- **Frontend**: O frontend foi testado acessando a URL pública gerada pelo Render para confirmar que a SPA React carregava corretamente e se comunicava com o backend.
+- **Banco de Dados**: O backend foi validado para acessar o PostgreSQL com operações CRUD, confirmando a comunicação com o banco de dados.
+
+### 5. Validação Final em Produção
+
+- **Teste de Funcionalidade**: Testes de usabilidade foram realizados para garantir que as rotas principais e funcionalidades, como login e navegação, estavam operacionais.
+- **Testes de Integração**: O fluxo de dados entre frontend, backend e banco de dados foi verificado para assegurar comunicação confiável.
+- **Testes de Segurança**: A autenticação JWT e o armazenamento seguro de tokens foram validados, permitindo que apenas usuários autenticados acessassem rotas protegidas.
+- **Teste de Escalabilidade**: A aplicação foi submetida a múltiplas requisições simultâneas para garantir desempenho adequado sob alta demanda.
+
 
 
 ## Testes
