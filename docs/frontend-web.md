@@ -6,18 +6,57 @@ O aplicativo web de venda de tickets é projetado para proporcionar uma experiê
 ## Tecnologias Utilizadas
 [Lista das tecnologias principais que serão utilizadas no projeto.]
 
-- ReactJS: Para a criação de uma interface de usuário dinâmica e interativa.
-- Redux: Gerenciamento de estado global da aplicação, facilitando a consistência dos dados.
-- Axios: Para realizar requisições HTTP, conectando o front-end à API do backend.
-- Material-UI: Para os componentes de interface, garantindo um design moderno e responsivo.
-- Styled-Components: Para estilização modular e adaptável dos componentes.
-- Stripe/PayPal API: Integração para processamento de pagamentos de forma segura.
-- React Router: Para gerenciamento de rotas, facilitando a navegação entre diferentes páginas do app.
+- ReactJS: Biblioteca principal para construção da interface do usuário, oferecendo uma estrutura de componentes reativa e modular.
+- React Router: Gerencia a navegação e o roteamento dentro da aplicação, permitindo transições de páginas sem recarregar.
+- Context API: Utilizada junto com React para gerenciar o estado global de autenticação, facilitando o controle de login, logout e proteção de rotas.
+- Bootstrap: Framework CSS que fornece uma base responsiva e moderna, utilizado junto com estilos personalizados para uma aparência consistente e adaptável.
+- EmailJS: Serviço de envio de e-mails utilizado para o formulário de contato, permitindo enviar mensagens sem um backend dedicado.
+- LocalStorage: Usado para armazenar o token de autenticação do usuário, garantindo persistência da sessão mesmo após o recarregamento da página.
+- Fetch API: Realiza requisições HTTP para a API backend, com funções CRUD para criar, ler, atualizar e deletar dados.
+- JWT (JSON Web Token): Utilizado para autenticação segura, validando o acesso do usuário com base em tokens.
+- Dotenv: Carrega variáveis de ambiente (.env), permitindo configurar URLs e outros parâmetros de forma dinâmica conforme o ambiente de execução (ex.: desenvolvimento ou produção).
+- Font Awesome: Biblioteca de ícones usada para adicionar ícones visuais e melhorar a usabilidade da interface.
 
 ## Arquitetura
 [Descrição da arquitetura das aplicação web, incluindo os componentes e suas interações.]
 
-A arquitetura será baseada em uma aplicação de página única (SPA), onde as interações principais ocorrerão sem recarregamentos completos de página. As requisições à API para busca de eventos, compra de ingressos e validação de pagamentos serão feitas utilizando Axios. O estado da aplicação será centralizado em Redux, garantindo a sincronia de dados entre componentes e rotas.
+A aplicação é estruturada como uma SPA (Single Page Application), ou seja, toda a navegação acontece em uma única página, sem recarregar o site a cada clique. Isso deixa a experiência mais rápida e fluida para o usuário. A aplicaçǎo foi organizada da seguinte maneira: 
+
+1- Estrutura Principal: 
+
+- App é o componente principal que organiza toda a aplicação. Ele contém as rotas e envolve os componentes Navbar e Footer, que aparecem em todas as páginas. A navegação entre páginas é gerenciada pelo React Router.
+
+2- Roteamento e Autenticação:
+
+- Rotas Públicas: Incluem páginas que qualquer pessoa pode acessar, como Home, Catalogo, Evento, Login, Register, Contato e Politica.
+
+- Rotas Privadas: São protegidas e só podem ser acessadas por quem está logado. Páginas como CriarEvento e Carrinho são protegidas por um componente especial chamado PrivateRoute, que redireciona para o login caso o usuário não esteja autenticado.
+
+- AuthContext: Gerencia o login, logout e mantém o usuário autenticado enquanto navega. Ele usa o token JWT, armazenado no localStorage, para garantir que o usuário continue logado mesmo ao atualizar a página.
+
+3- Componentização: 
+
+- Cada parte do site é um componente separado, como Navbar, Footer, FiltroEventos, CartaoEvento, entre outros. Isso facilita a manutenção e reutilização do código em diferentes partes da aplicação.
+
+4- Comunicação com a API: 
+
+- Todas as requisições ao backend (login, registro, criação de eventos) passam por um módulo central chamado apiService. Ele é responsável por configurar cabeçalhos, incluir o token JWT e tratar erros de forma centralizada.
+
+- JWT: O token JWT é usado para proteger as rotas e garantir que só usuários autenticados possam acessar áreas restritas.
+
+5- Funcionalidades Principais:
+
+- Autenticação: O AuthContext gerencia o login e logout. O usuário faz login e recebe um token, que é usado para acessar rotas protegidas.
+
+- Listagem e Filtros: Na página Catalogo, o usuário pode ver eventos e usar filtros para refinar a busca. A busca acontece de forma dinâmica, com requisições para a API a cada ajuste nos filtros.
+
+- Compra de Ingressos: Na página Evento, o usuário seleciona o tipo de ingresso, define a quantidade e vê o valor total antes de finalizar a compra.
+
+6- Estilo e Layout:
+
+- A aplicação usa Bootstrap para garantir um layout responsivo que se adapta a diferentes telas, como celulares e computadores.
+Estilos adicionais são aplicados via CSS customizado para manter uma identidade visual única.
+
 
 ## Modelagem da Aplicação
 [Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
@@ -34,12 +73,61 @@ Essas entidades serão representadas como objetos JavaScript manipulados pelo es
 
 O projeto da interface será focado na usabilidade e simplicidade. As principais páginas incluem:
 
-Página de Listagem de Eventos: Mostra os eventos disponíveis com informações básicas e opções de filtro.
-Página de Detalhes do Evento: Exibe informações detalhadas de um evento específico, tipos de ingressos e preços.
-Carrinho de Compras: Resumo dos ingressos selecionados, com opções para modificar quantidades e confirmar a compra.
-Página de Pagamento: Formulário para inserção de dados de pagamento com integração segura via Stripe ou PayPal.
-Confirmação de Compra: Tela de sucesso com detalhes da compra e acesso aos ingressos digitais.
+1. Design Visual
 
+- Estilo Geral: Limpo e moderno, com uso de cores neutras e destaques em botões e links para facilitar a navegação.
+
+- Paleta de Cores: A paleta é composta de tons neutros (cinza e branco) com uma cor de destaque (como azul ou verde) para botões e elementos interativos.
+
+- Tipografia: Utiliza fontes sans-serif para uma leitura agradável e simples. Cabeçalhos e títulos são destacados, enquanto o corpo do texto é claro e fácil de ler.
+
+- Ícones: A interface utiliza ícones do Font Awesome para guiar o usuário, como ícones de ingressos, usuário, carrinho, etc., que aumentam a compreensão e interação.
+
+2. Layout das Páginas
+
+- Cabeçalho (Navbar): Exibe links de navegação para as páginas principais (Home, Catálogo, Contato, Login, Registro). O cabeçalho é fixo no topo e ajusta-se conforme o tamanho da tela.
+
+- Rodapé (Footer): Contém links rápidos para políticas de privacidade e contato, além dos ícones de redes sociais.
+
+- Página Inicial (Home):
+
+Objetivo: Apresentar a aplicação e os eventos principais.
+Conteúdo: Destaques de eventos populares ou recomendados e uma breve descrição da plataforma.
+Interações: Links para o catálogo e outros eventos destacados, incentivando o usuário a explorar mais.
+
+- Catálogo de Eventos:
+
+Objetivo: Exibir todos os eventos disponíveis.
+Layout: Grade de cartões com uma breve descrição de cada evento, incluindo imagem, data, local e um botão “Saiba Mais”.
+Interações: Filtros na lateral (por data, classificação etária, localização, etc.) para refinar os resultados. A lista de eventos atualiza automaticamente com base nos filtros selecionados.
+
+- Detalhes do Evento:
+
+Objetivo: Exibir as informações detalhadas de um evento específico.
+Conteúdo: Nome, data e hora, local, descrição completa, tipos de ingressos e lotação.
+Interações: Seletor de ingresso e quantidade, com atualização do valor total. Botão de “Comprar Agora” que leva ao processo de compra.
+
+- Carrinho:
+
+Objetivo: Exibir os ingressos que o usuário selecionou.
+Layout: Tabela com detalhes do ingresso, quantidade e valor total.
+Interações: Opções para alterar a quantidade ou remover itens, e botão para prosseguir com o pagamento.
+
+- Login e Registro:
+
+Objetivo: Permitir que o usuário faça login ou crie uma nova conta.
+Layout: Formulários simples, com campos para e-mail e senha. A página de registro inclui campos adicionais, como nome e data de nascimento.
+Interações: Mensagens de erro em caso de problemas na autenticação, como senha incorreta ou e-mail já registrado.
+
+- Criar Evento (acessível para organizadores):
+
+Objetivo: Permitir que organizadores cadastrem novos eventos.
+Conteúdo: Formulário com campos detalhados para o nome do evento, data, local, descrição e tipos de ingressos.
+Interações: Opção para fazer upload de uma imagem para a capa do evento. Botão para salvar e publicar o evento.
+
+4. Responsividade
+
+A interface foi projetada com Bootstrap e CSS customizado para garantir que o layout se ajuste automaticamente em dispositivos móveis, tablets e desktops.
 
 ## Wireframes
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
@@ -77,34 +165,71 @@ Esta é a página de catálogo, onde os usuários podem navegar por diferentes e
 ## Design Visual
 [Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
 
+A interface tem um visual moderno e direto, usando cores neutras como base e um tom vibrante para destacar botões e links importantes. A tipografia sans-serif garante uma leitura fácil, enquanto ícones do Font Awesome orientam as ações do usuário. Elementos gráficos simples, com bordas sutis e espaçamento organizado, deixam a navegação leve e intuitiva em qualquer dispositivo.
+
 ### Layout Responsivo
 [Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
 
-O layout será projetado para se adaptar a qualquer dispositivo, desde desktops até smartphones. Grid Flexível e Media Queries serão usados para ajustar o conteúdo de acordo com o tamanho da tela, garantindo que o processo de compra seja simples e acessível em dispositivos móveis.
+A interface se adapta a diferentes telas usando Bootstrap e media queries, organizando os elementos em colunas em desktops e empilhando-os em dispositivos móveis. O menu se transforma em "hambúrguer" no mobile, e imagens e textos ajustam-se para manter a legibilidade em qualquer tamanho de tela.
 
 ## Interações do Usuário
 [Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
 
-As interações do usuário serão baseadas em transições suaves e feedback visual. Quando um usuário adicionar um ingresso ao carrinho, haverá uma animação sutil indicando a ação bem-sucedida. No processo de pagamento, validações de formulário em tempo real garantirão que os dados sejam inseridos corretamente antes da conclusão.
+A interface traz transições suaves entre páginas e animações discretas para botões e ícones. Ao adicionar itens ao carrinho ou fazer login, o usuário vê mensagens de confirmação. Campos de formulário destacam-se ao focar, e o menu se expande com toque no mobile.
 
 ## Fluxo de Dados
 [Diagrama ou descrição do fluxo de dados na aplicação.]
 
-O fluxo de dados seguirá uma arquitetura de ciclo unidirecional, com a aplicação React se comunicando diretamente com a API do back-end para buscar e enviar dados. Ao selecionar um evento, os detalhes dos ingressos serão recuperados via API, permitindo ao usuário selecionar e comprar ingressos em tempo real.
+O fluxo de dados começa com o usuário enviando uma solicitação, como login, consulta de eventos ou compra de ingressos. A aplicação faz requisições à API, que retorna dados ou confirmações. Informações do usuário, como autenticação e itens no carrinho, são gerenciadas pelo Context API e armazenadas no localStorage para persistência. Os dados fluem entre os componentes via props e Context API, garantindo sincronização em toda a interface.
 
 ## Requisitos Funcionais
 [Liste os principais requisitos funcionais da aplicação.]
 
-Exibir uma lista de eventos com filtros por data, local e tipo de evento.
-Permitir a seleção de ingressos e adicionar ao carrinho de compras.
+1- Exibir lista de eventos com filtros por data, local e tipo de evento.
+
+2- Permitir cadastro e login de usuários.
+
+3- Exibir detalhes de um evento específico, incluindo ingressos disponíveis.
+
+4- Adicionar ingressos ao carrinho e atualizar quantidade.
+
+5- Realizar compra de ingressos com cálculo de valor total.
+
+6- Permitir criação e gerenciamento de eventos (para organizadores).
+
+7- Enviar confirmações e mensagens de erro ao usuário em cada ação.
 
 ## Requisitos Não Funcionais
 [Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
 
+1-Desempenho: Carregar páginas e dados de forma rápida, especialmente para listas de eventos e carrinho.
+
+2- Segurança: Proteger dados do usuário com autenticação JWT e armazenamento seguro de senhas.
+
+3- Escalabilidade: Suportar aumento no número de usuários e eventos sem perda de desempenho.
+
+4- Usabilidade: Interface intuitiva e responsiva para navegação fácil em diferentes dispositivos.
+
+5- Disponibilidade: Garantir que a aplicação esteja acessível continuamente, com baixo tempo de inatividade.
+
+6- Manutenção: Código modular e organizado para facilitar atualizações e correções.
 
 ## Considerações de Segurança
 
 [Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+
+1- Autenticação e Autorização: Uso de JWT (JSON Web Tokens) para autenticar usuários e garantir acesso apenas a áreas autorizadas, como o gerenciamento de eventos.
+
+2- Proteção de Dados: Criptografia de senhas no banco de dados para proteger informações sensíveis.
+
+3- Armazenamento Seguro: Tokens de autenticação são armazenados de forma segura no localStorage, e acessos críticos utilizam HTTPS para criptografar dados em trânsito.
+
+4- Proteção contra Ataques: Implementação de medidas contra ataques comuns, como SQL Injection e Cross-Site Scripting (XSS), validando entradas e sanitizando dados.
+
+5- Limitação de Sessão: Expiração automática de tokens para prevenir acessos não autorizados em caso de sessões prolongadas ou comprometidas.
+
+6- Controle de Acesso: Restrição de rotas específicas para organizadores, garantindo que apenas usuários autorizados possam criar e gerenciar eventos.
+
 
 ## Implantação
 
