@@ -16,7 +16,7 @@ TickTag Mobile é um aplicativo focado em facilitar a compra, venda e gerenciame
 
 A modelagem da aplicação apresentada no diagrama representa um sistema de gestão de eventos e emissão de tickets, conforme os seguintes detalhes:
 
-## Estrutura de Dados
+### Estrutura de Dados
 
 ![mod](img/modelagem.jpeg)
 
@@ -67,7 +67,7 @@ A modelagem da aplicação apresentada no diagrama representa um sistema de gest
   - `id`: identificador único.
   - `nome`, `data_nascimento`, `email`, `telefone`, e `cpf`: dados pessoais.
 
-## Relacionamentos
+### Relacionamentos
 
 - **`endereco` ↔ `evento`**
   - Relação de **um para muitos**: um endereço pode ser associado a vários eventos.
@@ -81,11 +81,11 @@ A modelagem da aplicação apresentada no diagrama representa um sistema de gest
 - **`usuario` ↔ `ticket`**
   - Relação de **um para muitos**: um usuário pode adquirir vários tickets.
 
-## Diagrama de Classes ou Entidades
+### Diagrama de Classes ou Entidades
 
-O diagrama anexado reflete a estrutura de dados relacional do sistema. Ele representa as entidades principais (`endereco`, `evento`, `tipo_ticket`, `ticket`, e `usuario`), seus atributos e os relacionamentos por meio de chaves estrangeiras.
+O diagrama acima reflete a estrutura de dados relacional do sistema. Ele representa as entidades principais (`endereco`, `evento`, `tipo_ticket`, `ticket`, e `usuario`), seus atributos e os relacionamentos por meio de chaves estrangeiras.
 
-## Utilidade do Modelo
+### Utilidade do Modelo
 
 Esta modelagem suporta as funcionalidades de:
 1. Cadastro de eventos com detalhes completos (data, endereço, lotação, etc.).
