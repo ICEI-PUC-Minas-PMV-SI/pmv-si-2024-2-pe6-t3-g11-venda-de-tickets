@@ -233,9 +233,13 @@ A modelagem reflete o fluxo de dados atualizado entre as entidades principais, g
 
 ### **Fluxo Detalhado**
 **1. Cadastro de Evento:** Os eventos são a base da aplicação, sendo criados primeiro.
+
 **2. Associação ao Endereço:** Cada evento é associado a um endereço, permitindo a definição do local.
+
 **3. Configuração de Tickets:** Os tipos de tickets são configurados com base no evento.
+
 **4. Registro de Usuários:** Usuários são cadastrados para realizar a compra de tickets.
+
 **5. Emissão de Tickets:** Cada ticket é vinculado a um usuário e a um evento, garantindo rastreabilidade.
 
 ## Requisitos Funcionais
