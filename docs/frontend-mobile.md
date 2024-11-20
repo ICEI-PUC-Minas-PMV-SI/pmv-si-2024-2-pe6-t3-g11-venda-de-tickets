@@ -13,13 +13,12 @@ TickTag Mobile é um aplicativo focado em facilitar a compra, venda e gerenciame
 [Descrição da arquitetura das aplicação móvel, incluindo os componentes e suas interações.]
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
-![mod](img/modelagem.jpeg)
-# Modelagem da Aplicação
 
 A modelagem da aplicação apresentada no diagrama representa um sistema de gestão de eventos e emissão de tickets, conforme os seguintes detalhes:
 
 ## Estrutura de Dados
+
+![mod](img/modelagem.jpeg)
 
 ### **Tabela `endereco`**
 - Contém informações relacionadas ao endereço onde o evento será realizado.
