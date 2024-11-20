@@ -176,7 +176,67 @@ Confirmações:
 
 ## Fluxo de Dados
 
-[Diagrama ou descrição do fluxo de dados na aplicação.]
+A modelagem reflete o fluxo de dados atualizado entre as entidades principais, garantindo que o endereço seja vinculado diretamente ao evento.
+
+### **1. Cadastro de Eventos**
+- O fluxo inicia com o cadastro do evento na tabela `evento`.
+- Informações cadastradas:
+  - Nome do evento.
+  - Data e hora.
+  - Capacidade máxima de público (`lotacao_max`).
+  - Classificação indicativa (`classificacao`).
+- O evento recebe um identificador único (`id`), que será usado em outras tabelas.
+
+### **2. Registro de Endereços**
+- Após o evento ser cadastrado, é associado a ele um endereço por meio da tabela `endereco`.
+- Cada endereço recebe o identificador do evento (`id_evento`), criando um vínculo direto.
+- Informações cadastradas:
+  - Nome e tipo do logradouro.
+  - Bairro, cidade, estado e número.
+  - Nome do espaço onde o evento será realizado.
+
+### **3. Configuração de Tipos de Tickets**
+- Com o evento registrado, são configurados os tipos de tickets na tabela `tipo_ticket`.
+- Cada tipo de ticket é vinculado ao evento por meio da chave estrangeira `id_evento`.
+- Informações cadastradas:
+  - Número do lote (`lote`).
+  - Quantidade disponível no lote (`qtd_lote`).
+  - Valores de entrada (inteira e meia-entrada).
+  - Descrição do tipo de ticket (ex.: "VIP", "Pista").
+
+### **4. Registro de Usuários**
+- Os usuários são cadastrados com informações como:
+  - Nome completo.
+  - Data de nascimento.
+  - E-mail, telefone e CPF.
+- Cada usuário recebe um identificador único (`id`), que será utilizado na emissão de tickets.
+
+### **5. Emissão de Tickets**
+- Os tickets são gerados e armazenados na tabela `ticket`, vinculados a:
+  - Um usuário (chave estrangeira `id_usuario`).
+  - Um evento específico (chave estrangeira `id_evento`).
+- Informações cadastradas:
+  - Um código de autenticação único (`hash_code`), que identifica o ticket de forma segura.
+- Este processo garante que cada ticket seja rastreável, vinculando o comprador ao evento correspondente.
+
+---
+
+### Representação Visual do Fluxo
+
+```plaintext
+[Evento] -----> [Endereco]
+   |
+   +-----> [Tipo_Ticket]
+   |
+   +-----> [Ticket] -----> [Usuario]
+```
+
+### **Fluxo Detalhado**
+**1. Cadastro de Evento:** Os eventos são a base da aplicação, sendo criados primeiro.
+**2. Associação ao Endereço:** Cada evento é associado a um endereço, permitindo a definição do local.
+**3. Configuração de Tickets:** Os tipos de tickets são configurados com base no evento.
+**4. Registro de Usuários:** Usuários são cadastrados para realizar a compra de tickets.
+**5. Emissão de Tickets:** Cada ticket é vinculado a um usuário e a um evento, garantindo rastreabilidade.
 
 ## Requisitos Funcionais
 
