@@ -14,6 +14,85 @@ TickTag Mobile é um aplicativo focado em facilitar a compra, venda e gerenciame
 
 ## Modelagem da Aplicação
 [Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
+![mod](img/modelagem.jpeg)
+# Modelagem da Aplicação
+
+A modelagem da aplicação apresentada no diagrama representa um sistema de gestão de eventos e emissão de tickets, conforme os seguintes detalhes:
+
+## Estrutura de Dados
+
+### **Tabela `endereco`**
+- Contém informações relacionadas ao endereço onde o evento será realizado.
+- **Campos principais**: 
+  - `id`
+  - `nome_logradouro`
+  - `tipo_logradouro`
+  - `bairro`
+  - `cidade`
+  - `estado`
+  - `complemento`
+  - `numero`
+  - `nome_espaco`
+
+### **Tabela `evento`**
+- Armazena detalhes dos eventos cadastrados.
+- **Campos principais**: 
+  - `id`: identificador único do evento.
+  - `nome_evento`: nome do evento.
+  - `data`: data do evento.
+  - `id_endereco`: chave estrangeira relacionada à tabela `endereco`.
+  - `lotacao_max`: capacidade máxima de público.
+  - `classificacao`: classificação indicativa do evento.
+
+### **Tabela `tipo_ticket`**
+- Define os diferentes tipos de ingressos disponíveis para cada evento.
+- **Campos principais**:
+  - `id`: identificador único.
+  - `id_evento`: chave estrangeira relacionada à tabela `evento`.
+  - `lote`: número do lote do ingresso.
+  - `qtd_lote`: quantidade de ingressos no lote.
+  - `valor_ticket` e `valor_meia_ticket`: valores do ingresso inteiro e meia-entrada.
+  - `nome_tipo_ticket`: descrição do tipo de ingresso.
+
+### **Tabela `ticket`**
+- Representa os tickets gerados e vendidos no sistema.
+- **Campos principais**:
+  - `id`: identificador único.
+  - `id_usuario`: chave estrangeira para o comprador (tabela `usuario`).
+  - `id_evento`: chave estrangeira para o evento (tabela `evento`).
+  - `hash_code`: código único gerado para autenticação do ticket.
+
+### **Tabela `usuario`**
+- Contém os dados dos usuários cadastrados no sistema.
+- **Campos principais**:
+  - `id`: identificador único.
+  - `nome`, `data_nascimento`, `email`, `telefone`, e `cpf`: dados pessoais.
+
+## Relacionamentos
+
+- **`endereco` ↔ `evento`**
+  - Relação de **um para muitos**: um endereço pode ser associado a vários eventos.
+
+- **`evento` ↔ `tipo_ticket`**
+  - Relação de **um para muitos**: um evento pode ter diferentes tipos de ingressos.
+
+- **`evento` ↔ `ticket`**
+  - Relação de **um para muitos**: um evento pode gerar diversos tickets.
+
+- **`usuario` ↔ `ticket`**
+  - Relação de **um para muitos**: um usuário pode adquirir vários tickets.
+
+## Diagrama de Classes ou Entidades
+
+O diagrama anexado reflete a estrutura de dados relacional do sistema. Ele representa as entidades principais (`endereco`, `evento`, `tipo_ticket`, `ticket`, e `usuario`), seus atributos e os relacionamentos por meio de chaves estrangeiras.
+
+## Utilidade do Modelo
+
+Esta modelagem suporta as funcionalidades de:
+1. Cadastro de eventos com detalhes completos (data, endereço, lotação, etc.).
+2. Gerenciamento de ingressos (por tipo, lote e valores).
+3. Associação de tickets a eventos e usuários, garantindo a rastreabilidade por meio do `hash_code`.
+4. Integração dos dados de usuários para registro e consulta de compras.
 
 ## Projeto da Interface
 [Descreva o projeto da interface móvel da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
