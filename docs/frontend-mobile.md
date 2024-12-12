@@ -149,7 +149,21 @@ Suporte e Políticas:
 - Seções informativas com termos de uso, política de privacidade e um formulário de contato para suporte.
 
 ## Wireframes
-[Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
+
+### Homepage; Catálogo; Favoritos e Carteira e seus respectivos componentes
+![Homepage; Catalogo; Favoritos e Carteira - Mobile](img\home-catalogo-favoritos-carteira-categorias-mobile.png)
+
+### Login; Recuperar senha; Nova senha; Perfil; Registrar;
+![Login; Recuperar senha; Nova senha; Perfil; Registrar](img\login-registro-perfil-mobile.png)
+
+### Cadastro de Evento; Visualização de Evento `n`
+![Add Ingresso; Add Endereço; Criar Evento; Evento `n`](img\ingresso-endereco-criarevento-evento-mobile.png)
+
+### Carrinho; Ingressos; Pagamento
+![Carrinho; Quantidade Ingressos; Pagamento](img\carrinho-quantidade-pagamento-mobile.png)
+
+### Políticas; Contato suporte
+![Políticas; Contato suporte](img\politica-suporte-mobile.png)
 
 ## Design Visual
 [Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
