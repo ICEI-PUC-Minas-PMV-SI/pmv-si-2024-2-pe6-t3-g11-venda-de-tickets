@@ -1,0 +1,6 @@
+services:
+  - type: docker
+    name: Frontend
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free

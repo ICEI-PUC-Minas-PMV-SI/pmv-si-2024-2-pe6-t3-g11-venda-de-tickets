@@ -1,0 +1,61 @@
+.Home {
+  font-family: Arial, sans-serif;
+}
+
+.Home-header {
+  background-color: #f8f8f8;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.auth-buttons {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: auto;
+  }
+}
+
+/* Devemos modificar o tema da aplicação inteira
+   * em um lugar centralizado e não em cada página para
+   * a aplicação ficar consistente.
+   */
+
+/* .btn-outline-primary{
+    border-color: #767676;
+    color: black;
+    background-color: #E3E3E3;
+  } */
+
+/* .btn-primary{
+    background-color: #2C2C2C;
+    color:#F5F5F5;
+    border-color: transparent;
+  } */
+
+:hover.btn-primary {
+  background-color: #d9d9d9;
+  color: #2c2c2c;
+  border-color: transparent;
+}
+
+.border {
+  border-top-width: 0px; /* Borda superior */
+  border-right-width: 0px; /* Borda direita */
+  border-bottom-width: 3px !important; /* Borda inferior */
+  border-left-width: 0px;
+}

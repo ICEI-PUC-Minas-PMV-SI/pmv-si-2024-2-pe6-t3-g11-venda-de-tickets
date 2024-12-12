@@ -1,0 +1,22 @@
+/* 
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-top: 20px;
+  } */
+  
+  .footer-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .nav-link{
+    color: black
+  }
+
+  footer{
+    background-color: #ccc;
+  }

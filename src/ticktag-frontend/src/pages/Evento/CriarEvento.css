@@ -1,0 +1,104 @@
+.criar-evento-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    color: #007bff;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.adicionar-opcao-tipo {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Devemos modificar o tema da aplicação inteira
+ * em um lugar centralizado e não em cada página para
+ * a aplicação ficar consistente.
+ */
+
+/*.btn {*/
+/*    background-color: #007bff;*/
+/*    color: #fff;*/
+/*    padding: 10px 15px;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    font-size: 1rem;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.btn:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+.btn-add {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/*.btn-outline {*/
+/*    background-color: transparent;*/
+/*    color: #007bff;*/
+/*    border: 1px solid #007bff;*/
+/*}*/
+
+.lista-ingressos {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.item-ingresso {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.item-ingresso i {
+    color: #007bff;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,132 @@
+.Home {
+    font-family: Arial, sans-serif;
+  }
+
+.Home-header {
+    background-color: #f8f8f8;
+}
+
+  .logo {
+    font-size: 24px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .auth-buttons button {
+    margin-left: 10px;
+  }
+
+  .featured-event {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f0f0f0;
+  }
+
+  .event-info {
+    max-width: 50%;
+  }
+
+  .view-event-btn {
+    margin-top: 20px;
+  }
+
+  .btn > .nav-link  {
+    color: white;
+  }
+
+  :hover.btn > .nav-link  {
+    color: #2C2C2C
+  }
+
+/* Devemos modificar o tema da aplicação inteira
+* em um lugar centralizado e não em cada página para
+* a aplicação ficar consistente.
+*/
+
+  /*.card{*/
+  /*  border-left: 5px solid #ccc !important;*/
+  /*}*/
+
+  .event-video-placeholder {
+    width: 300px;
+    height: 200px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-events, .favorite-events, .upcoming-events {
+    padding: 40px 20px;
+  }
+
+  .event-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .event-card {
+    width: 96%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-top: 20px;
+  }
+
+  .footer-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .nav-link{
+    color: black
+  }
+
+/* Devemos modificar o tema da aplicação inteira
+* em um lugar centralizado e não em cada página para
+* a aplicação ficar consistente.
+*/
+
+  /*.btn-outline-primary{*/
+  /*  border-color: #767676;*/
+  /*  color: black;*/
+  /*  background-color: #E3E3E3;*/
+  /*}*/
+
+  /*.btn-primary{*/
+  /*  background-color: #2C2C2C;*/
+  /*  color:#F5F5F5;*/
+  /*  border-color: transparent;*/
+  /*}*/
+
+  /*:hover.btn-primary{*/
+  /*  background-color: #D9D9D9;*/
+  /*  color:#2C2C2C;*/
+  /*  border-color: transparent;*/
+  /*}*/
+
+  .border{
+
+    border-top-width: 0px;   /* Borda superior */
+    border-right-width: 0px; /* Borda direita */
+    border-bottom-width: 3px !important; /* Borda inferior */
+    border-left-width: 0px;
+  }

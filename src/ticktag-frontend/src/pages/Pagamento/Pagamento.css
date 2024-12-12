@@ -1,0 +1,152 @@
+.payment-container {
+  min-height: calc(100vh - 175px);
+  font-family: Arial, sans-serif;
+  padding: 20px 50px 50px 50px;
+  text-align: center;
+}
+
+.payment-tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.payment-options {
+  padding: 10px 20px;
+  margin: auto;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  transition: background-color 1s;
+}
+
+.payment-option {
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: none;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  width: 50%;
+  height: 50%;
+}
+
+.payment-option.active.credit-card {
+  margin-left: 50%;
+}
+
+.payment-option.active {
+  display: block;
+}
+
+.payment-options:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.payment-options.active {
+  background-color: #fff;
+  border-bottom: 2px solid #007bff;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.order-details {
+  background-color: #fff;
+  text-align: center;
+  max-width: calc(100vh - 150px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 25px auto;
+}
+
+.order-details p {
+  margin: 5px 0;
+}
+
+.payment-methods {
+  margin-top: 20px;
+}
+
+.payment-option h4 {
+  color: #333;
+  font-size: 18px;
+}
+
+.payment-option input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: darkgray;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.button.confirm-button {
+  width: 10%;
+  background-color: orange;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.confirmation-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-button {
+  background-color: #4caf50;
+}
+
+.confirm-button:hover {
+  background-color: #388e3c;
+}
+
+.cancel-button {
+  background-color: #f44336;
+}
+
+.cancel-button:hover {
+  background-color: #e53935;
+}
+
+.pix-details {
+  display: grid;
+}
+
+.qr-code-and-button {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.progress-bar.container {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+
+  > .loading-bar {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #4caf50;
+    transition: width 0.1s ease-in-out;
+  }
+}
+
+

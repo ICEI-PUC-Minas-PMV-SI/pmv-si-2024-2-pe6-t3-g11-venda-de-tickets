@@ -1,0 +1,70 @@
+/* Estilos para a página de contato */
+.contato-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.contato.form-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+.contato.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contato.form-group {
+    margin-bottom: 15px;
+}
+
+.contato.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contato.form-group input,
+.contato.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contato.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contato.btn-submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.contato.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.contato.envio-status {
+    text-align: center;
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+}
