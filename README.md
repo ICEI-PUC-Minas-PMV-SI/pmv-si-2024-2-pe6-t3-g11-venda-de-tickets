@@ -111,8 +111,8 @@ Certifique-se de que os seguintes itens estão instalados em sua máquina:
 # Código
 
 <li><a href="https://github.com/sales-victor/TickTag">Back-end</a></li>
-li><a href="https://github.com/ThiagoVini13/ticktag-frontend">Front-end</a></li>
-li><a href="https://github.com/sales-victor/ticktag-mobile">Mobile</a></li>
+<li><a href="https://github.com/ThiagoVini13/ticktag-frontend">Front-end</a></li>
+<li><a href="https://github.com/sales-victor/ticktag-mobile">Mobile</a></li>
 
 # Apresentação
 
