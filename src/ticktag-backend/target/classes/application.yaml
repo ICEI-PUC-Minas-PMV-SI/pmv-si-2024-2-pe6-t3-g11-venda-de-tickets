@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: postgres
+  application:
+    name: TickTag
+
+url:
+  front: ${URL_FRONT:http://localhost:3000}
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

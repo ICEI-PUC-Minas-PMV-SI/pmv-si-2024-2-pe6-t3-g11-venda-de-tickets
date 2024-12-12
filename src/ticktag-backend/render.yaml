@@ -1,0 +1,6 @@
+services:
+  - type: docker
+    name: Backend
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
