@@ -49,8 +49,8 @@ Certifique-se de que os seguintes itens estão instalados em sua máquina:
 ### Configuração do Backend  
 1. Clone o repositório do backend:  
    ```bash  
-   git clone <url-do-repositorio-backend>  
-   cd <diretorio-backend>  
+   git clone https://github.com/sales-victor/TickTag.git 
+   cd TickTag  
    ```  
 
 2. Instale as dependências do projeto:  
@@ -58,9 +58,9 @@ Certifique-se de que os seguintes itens estão instalados em sua máquina:
 
 3. Configure o banco de dados no arquivo `application.properties`:  
    ```properties  
-   spring.datasource.url=jdbc:postgresql://localhost:5432/<nome-do-banco>  
-   spring.datasource.username=<usuario>  
-   spring.datasource.password=<senha>  
+   spring.datasource.url=jdbc:postgresql://localhost:5432/ticktag 
+   spring.datasource.username=postgres 
+   spring.datasource.password=753941 
    ```  
 
 4. Execute a aplicação:  
@@ -73,8 +73,8 @@ Certifique-se de que os seguintes itens estão instalados em sua máquina:
 ### Configuração do Frontend Web  
 1. Clone o repositório do frontend web:  
    ```bash  
-   git clone <url-do-repositorio-frontend-web>  
-   cd <diretorio-frontend-web>  
+   git clone https://github.com/ThiagoVini13/ticktag-frontend.git  
+   cd ticktag-frontend  
    ```  
 
 2. Instale as dependências:  
@@ -92,8 +92,8 @@ Certifique-se de que os seguintes itens estão instalados em sua máquina:
 ### Configuração do Frontend Mobile  
 1. Clone o repositório do frontend mobile:  
    ```bash  
-   git clone <url-do-repositorio-frontend-mobile>  
-   cd <diretorio-frontend-mobile>  
+   git clone https://github.com/sales-victor/ticktag-mobile.git 
+   cd ticktag-mobile
    ```  
 
 2. Instale as dependências:  
