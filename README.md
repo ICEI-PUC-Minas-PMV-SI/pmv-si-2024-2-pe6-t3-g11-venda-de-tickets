@@ -6,7 +6,9 @@
 
 `SEMESTRE: 6º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto consiste no desenvolvimento de uma plataforma online para a venda de tickets, voltada a eventos culturais, esportivos e de entretenimento. A aplicação busca oferecer uma experiência intuitiva e segura, permitindo aos usuários realizar a compra e o gerenciamento de ingressos de forma prática e confiável.
+
+Para atender a altos volumes de acessos simultâneos, a plataforma será construída com um sistema de balanceamento de carga e escalabilidade, garantindo desempenho consistente e alta disponibilidade, mesmo durante picos de demanda. Além disso, contará com um design responsivo e adaptativo, proporcionando uma experiência otimizada tanto em dispositivos móveis quanto em desktops, com interfaces funcionais e visualmente atrativas em diferentes tamanhos de tela e resoluções.
 
 ## Integrantes
 
@@ -30,13 +32,87 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 | ETAPA 3         |[Planejar, desenvolver e gerenciar uma aplicação Web](docs/frontend-web.md) |
 | ETAPA 4        |[Planejar, desenvolver e gerenciar uma aplicação Móvel](docs/frontend-mobile.md) <br>  |
 | ETAPA 5         | [Apresentação](presentation/README.md) |
+
+
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+### Pré-requisitos  
+Certifique-se de que os seguintes itens estão instalados em sua máquina:  
+- **Node.js** (v16 ou superior) e **npm** (ou **yarn**)  
+- **Java** (JDK 17 ou superior)  
+- **PostgreSQL** (versão 13 ou superior)  
+- **Expo CLI** (para executar o aplicativo mobile)  
+- **Git** (para clonar os repositórios do projeto)  
+
+---
+
+### Configuração do Backend  
+1. Clone o repositório do backend:  
+   ```bash  
+   git clone <url-do-repositorio-backend>  
+   cd <diretorio-backend>  
+   ```  
+
+2. Instale as dependências do projeto:  
+   - Certifique-se de que o **Lombok** está configurado no IDE.  
+
+3. Configure o banco de dados no arquivo `application.properties`:  
+   ```properties  
+   spring.datasource.url=jdbc:postgresql://localhost:5432/<nome-do-banco>  
+   spring.datasource.username=<usuario>  
+   spring.datasource.password=<senha>  
+   ```  
+
+4. Execute a aplicação:  
+   ```bash  
+   ./mvnw spring-boot:run  
+   ```  
+
+---
+
+### Configuração do Frontend Web  
+1. Clone o repositório do frontend web:  
+   ```bash  
+   git clone <url-do-repositorio-frontend-web>  
+   cd <diretorio-frontend-web>  
+   ```  
+
+2. Instale as dependências:  
+   ```bash  
+   npm install  
+   ```  
+
+3. Execute a aplicação em modo de desenvolvimento:  
+   ```bash  
+   npm start  
+   ```  
+
+---
+
+### Configuração do Frontend Mobile  
+1. Clone o repositório do frontend mobile:  
+   ```bash  
+   git clone <url-do-repositorio-frontend-mobile>  
+   cd <diretorio-frontend-mobile>  
+   ```  
+
+2. Instale as dependências:  
+   ```bash  
+   npm install  
+   ```  
+
+3. Inicie o Expo Go:  
+   ```bash  
+   expo start  
+   ```  
+
+4. Abra o aplicativo **Expo Go** no dispositivo móvel e escaneie o QR Code gerado no terminal ou na interface web do Expo.  
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="https://github.com/sales-victor/TickTag">Back-end</a></li>
+li><a href="https://github.com/ThiagoVini13/ticktag-frontend">Front-end</a></li>
+li><a href="https://github.com/sales-victor/ticktag-mobile">Mobile</a></li>
 
 # Apresentação
 
