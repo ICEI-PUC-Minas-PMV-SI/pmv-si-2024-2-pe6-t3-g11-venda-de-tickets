@@ -1,16 +1,31 @@
 # Front-end Móvel
-
-[Inclua uma breve descrição do projeto e seus objetivos.]
-
 TickTag Mobile é um aplicativo focado em facilitar a compra, venda e gerenciamento de ingressos para eventos. Com uma interface intuitiva, o app permite que clientes explorem um catálogo variado de eventos, adquiram ingressos de forma rápida e segura, e mantenham o controle de suas transações em uma carteira virtual. Além disso, clientes autenticados podem atuar como organizadores, cadastrando seus próprios eventos e colocando ingressos à venda diretamente na plataforma, promovendo uma experiência colaborativa e abrangente.
 
 
-## Tecnologias Utilizadas
-[Lista das tecnologias principais que serão utilizadas no projeto.]
+## Tecnologias Utilizadas 
+No desenvolvimento deste projeto, foram empregadas as seguintes tecnologias:
+
+- React Native: Framework para desenvolvimento de aplicações móveis multiplataforma, permitindo a criação de interfaces nativas para Android e iOS com JavaScript.
+- Expo Go: Ferramenta que simplifica o desenvolvimento com React Native, facilitando a visualização em tempo real das alterações e o acesso a bibliotecas específicas.
+- Axios: Biblioteca utilizada para realizar requisições HTTP, garantindo a integração entre o aplicativo e as APIs necessárias.
 
 ## Arquitetura
 
-[Descrição da arquitetura das aplicação móvel, incluindo os componentes e suas interações.]
+A aplicação móvel foi desenvolvida utilizando uma arquitetura modular e escalável, visando organizar os componentes de forma clara e eficiente. Os principais elementos e suas interações estão descritos abaixo:
+
+### Componentes da Arquitetura
+**1. Interface do Usuário (UI)**
+- Desenvolvida com React Native, utilizando componentes reutilizáveis e estilizações customizadas.
+- Navegação implementada por meio de bibliotecas específicas, como React Navigation, garantindo uma experiência fluida.
+
+**2. Comunicação com APIs**
+- Realizada com a biblioteca Axios, responsável por executar requisições HTTP (GET, POST, PUT, DELETE) a serviços remotos.
+- O tratamento de respostas inclui manipulação de erros e conversão dos dados para formatos compatíveis com a aplicação.
+
+### Fluxo de Interação
+- O usuário interage com a Interface do Usuário (UI), disparando eventos que atualizam o estado global ou local.
+- Os dados são requisitados do backend por meio de serviços encapsulados na camada de comunicação.
+- As respostas são tratadas e exibidas na interface, garantindo uma experiência consistente e responsiva.
 
 ## Modelagem da Aplicação
 
@@ -94,8 +109,6 @@ Esta modelagem suporta as funcionalidades de:
 4. Integração dos dados de usuários para registro e consulta de compras.
 
 ## Projeto da Interface
-[Descreva o projeto da interface móvel da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
-
 O design do TickTag Mobile foi desenvolvido com foco em simplicidade, acessibilidade e funcionalidade. A interface é orientada para dispositivos móveis, garantindo que usuários possam navegar facilmente entre as principais funcionalidades do app, seja para comprar ingressos ou cadastrar eventos. O estilo de design foi mantido consistente em todas as páginas, com o uso de componentes reutilizáveis como botões, cards e inputs.
 
 Estrutura da Interface
@@ -142,8 +155,6 @@ Suporte e Políticas:
 [Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
 
 ## Layout Responsivo
-[Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
-
 O aplicativo será desenvolvido exclusivamente para dispositivos móveis, com uma adaptação cuidadosa para diferentes tamanhos de tela, garantindo uma experiência consistente e intuitiva tanto em smartphones quanto em tablets.
 
 Smartphones
@@ -156,8 +167,6 @@ A adaptação responsiva visa garantir que o design permaneça funcional e estet
 
 
 ## Interações do Usuário
-[Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
-
 As interações foram projetadas para garantir facilidade e fluidez. Abaixo estão as principais interações esperadas:
 
 Navegação Intuitiva: 
@@ -243,9 +252,6 @@ A modelagem reflete o fluxo de dados atualizado entre as entidades principais, g
 **5. Emissão de Tickets:** Cada ticket é vinculado a um usuário e a um evento, garantindo rastreabilidade.
 
 ## Requisitos Funcionais
-
-[Liste os principais requisitos funcionais da aplicação.]
-
 1. Autenticação
 - O sistema deve permitir que usuários façam login utilizando email e senha.
 - O sistema deve permitir o registro de novos usuários com nome, email e senha.
@@ -284,9 +290,6 @@ A modelagem reflete o fluxo de dados atualizado entre as entidades principais, g
 - O sistema deve exibir informações de contato e termos de uso.
 
 ## Requisitos Não Funcionais
-
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
-
 1. Usabilidade
 - O aplicativo deve ser intuitivo e fácil de navegar, com interações claras e design amigável.
 - O sistema deve fornecer feedback imediato para as ações do usuário (ex.: carregando, sucesso, erro).
