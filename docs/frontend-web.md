@@ -1,10 +1,8 @@
 # Front-end Web
-[Inclua uma breve descrição do projeto e seus objetivos.]
 
 O aplicativo web de venda de tickets é projetado para proporcionar uma experiência simples e eficiente na compra de ingressos para eventos. O app permitirá que os usuários visualizem eventos disponíveis, selecionem ingressos, realizem pagamentos de forma segura e recebam ingressos digitais. O objetivo é criar uma plataforma responsiva que ofereça uma navegação intuitiva para os compradores de ingressos, além de fornecer ferramentas para os organizadores gerenciarem eventos e acompanhar vendas.
 
 ## Tecnologias Utilizadas
-[Lista das tecnologias principais que serão utilizadas no projeto.]
 
 - ReactJS: Biblioteca principal para construção da interface do usuário, oferecendo uma estrutura de componentes reativa e modular.
 - React Router: Gerencia a navegação e o roteamento dentro da aplicação, permitindo transições de páginas sem recarregar.
@@ -18,7 +16,6 @@ O aplicativo web de venda de tickets é projetado para proporcionar uma experiê
 - Font Awesome: Biblioteca de ícones usada para adicionar ícones visuais e melhorar a usabilidade da interface.
 
 ## Arquitetura
-[Descrição da arquitetura das aplicação web, incluindo os componentes e suas interações.]
 
 A aplicação é estruturada como uma SPA (Single Page Application), ou seja, toda a navegação acontece em uma única página, sem recarregar o site a cada clique. Isso deixa a experiência mais rápida e fluida para o usuário. A aplicaçǎo foi organizada da seguinte maneira: 
 
@@ -59,7 +56,6 @@ Estilos adicionais são aplicados via CSS customizado para manter uma identidade
 
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
 
 - Eventos: Inclui detalhes como nome, data, local, capacidade, ingressos disponíveis e preço.
 - Ingressos: Tipo de ingresso, quantidade disponível, valor unitário e descontos.
@@ -69,7 +65,6 @@ Estilos adicionais são aplicados via CSS customizado para manter uma identidade
 Essas entidades serão representadas como objetos JavaScript manipulados pelo estado da aplicação
 
 ## Projeto da Interface Web
-[Descreva o projeto da interface Web da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
 
 O projeto da interface será focado na usabilidade e simplicidade. As principais páginas incluem:
 
@@ -163,27 +158,22 @@ Esta é a página de catálogo, onde os usuários podem navegar por diferentes e
 ![arq](img/politica.png)
 
 ## Design Visual
-[Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
 
 A interface tem um visual moderno e direto, usando cores neutras como base e um tom vibrante para destacar botões e links importantes. A tipografia sans-serif garante uma leitura fácil, enquanto ícones do Font Awesome orientam as ações do usuário. Elementos gráficos simples, com bordas sutis e espaçamento organizado, deixam a navegação leve e intuitiva em qualquer dispositivo.
 
 ### Layout Responsivo
-[Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
 
 A interface se adapta a diferentes telas usando Bootstrap e media queries, organizando os elementos em colunas em desktops e empilhando-os em dispositivos móveis. O menu se transforma em "hambúrguer" no mobile, e imagens e textos ajustam-se para manter a legibilidade em qualquer tamanho de tela.
 
 ## Interações do Usuário
-[Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
 
 A interface traz transições suaves entre páginas e animações discretas para botões e ícones. Ao adicionar itens ao carrinho ou fazer login, o usuário vê mensagens de confirmação. Campos de formulário destacam-se ao focar, e o menu se expande com toque no mobile.
 
 ## Fluxo de Dados
-[Diagrama ou descrição do fluxo de dados na aplicação.]
 
 O fluxo de dados começa com o usuário enviando uma solicitação, como login, consulta de eventos ou compra de ingressos. A aplicação faz requisições à API, que retorna dados ou confirmações. Informações do usuário, como autenticação e itens no carrinho, são gerenciadas pelo Context API e armazenadas no localStorage para persistência. Os dados fluem entre os componentes via props e Context API, garantindo sincronização em toda a interface.
 
 ## Requisitos Funcionais
-[Liste os principais requisitos funcionais da aplicação.]
 
 1- Exibir lista de eventos com filtros por data, local e tipo de evento.
 
@@ -200,7 +190,6 @@ O fluxo de dados começa com o usuário enviando uma solicitação, como login, 
 7- Enviar confirmações e mensagens de erro ao usuário em cada ação.
 
 ## Requisitos Não Funcionais
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
 
 1-Desempenho: Carregar páginas e dados de forma rápida, especialmente para listas de eventos e carrinho.
 
@@ -216,7 +205,6 @@ O fluxo de dados começa com o usuário enviando uma solicitação, como login, 
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
 
 1- Autenticação e Autorização: Uso de JWT (JSON Web Tokens) para autenticar usuários e garantir acesso apenas a áreas autorizadas, como o gerenciamento de eventos.
 
@@ -310,19 +298,12 @@ A aplicação **Ticket-Tag** foi implantada em um ambiente de produção usando 
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
-
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
 
 ### 1. Catálogo
 
 ### 1.1 Testes Unitários
 
-Teste Cartao Evento:
+#### Teste Cartao Evento:
 
 Este teste assegura que o componente CartaoEvento exibe corretamente as informações principais do evento, incluindo nome, cidade e endereço, na interface do usuário.
 
@@ -351,7 +332,7 @@ Este teste verifica se o componente Catalogo aplica corretamente um filtro de da
 
 ### 1.2 Testes de Integração
 
-Teste de Aplicação de Múltiplos Filtros e Resultados no Componente Catalogo.
+#### Teste de Aplicação de Múltiplos Filtros e Resultados no Componente Catalogo.
 
 Esses testes verificam:
 
@@ -368,4 +349,4 @@ Este teste valida a funcionalidade de aplicar e limpar filtros no componente `Ca
 
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+  -
