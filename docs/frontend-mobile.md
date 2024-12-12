@@ -246,24 +246,107 @@ A modelagem reflete o fluxo de dados atualizado entre as entidades principais, g
 
 ### Representação Visual do Fluxo
 
-```plaintext
-[Evento] -----> [Endereco]
-   |
-   +-----> [Tipo_Ticket]
-   |
-   +-----> [Ticket] -----> [Usuario]
+```markdown
+# Fluxo 1: Acesso e Cadastro de Usuário
+
+[Home]  
+ ├──> [Login]  
+ │      ├──> [Recuperar Senha] -> [Nova Senha] -> [Login]  
+ │      └──> [Registrar] -> [Perfil]  
+ │  
+ └──> [Categorias] -> [Lista de Eventos por Categoria n] -> [Evento n]
+
+---
+
+# Fluxo 2: Exploração de Eventos
+
+[Home] -> [Catálogo] -> [Evento n] -> [Ver opções de compra] -> [Ingressos Evento n] -> [Carrinho] -> [Pagamento]
+
+*Do Catálogo, o usuário pode filtrar, buscar e navegar por eventos. Ao selecionar um evento, segue para ver detalhes, ingressos e concluir compra.*
+
+---
+
+# Fluxo 3: Favoritos
+
+[Home] -> [Catálogo] -> [Evento n] -> [Adicionar aos Favoritos] -> [Favoritos]
+
+*Usuário marca evento como favorito e depois acessa a lista de favoritos.*
+
+---
+
+# Fluxo 4: Carteira de Ingressos
+
+[Home] -> [Carteira]  
+              ├──> [Ativos] -> [Ver Ingresso]  
+              └──> [Encerrados]
+
+*Usuário visualiza ingressos já adquiridos, ativos ou encerrados.*
+
+---
+
+# Fluxo 5: Políticas e Suporte
+
+[Home] -> [Políticas] -> [Seção 1 / Seção 2 / Seção 3 / Seção 4]  
+[Home] -> [Suporte] -> [Formulário de Contato] -> [Enviar]
+
+*Usuário pode visualizar políticas do app e contatar o suporte através de um formulário.*
+
+---
+
+# Fluxo 6: Criação e Edição de Evento (Organizador)
+
+[Home] -> [Criar Evento]  
+             ├──> [Adicionar Data/Horário]  
+             ├──> [Adicionar Endereço]  
+             ├──> [Adicionar Ingressos]  
+             └──> [Salvar Evento]
+
+*Se o usuário for um organizador, pode criar e editar eventos, adicionando detalhes e ingressos.*
+
+---
+
+# Fluxo 7: Editar Perfil
+
+[Home] -> [Perfil] -> [Editar dados: Nome, E-mail, Senha, etc.] -> [Salvar]
+
+*Usuário pode atualizar suas informações de perfil.*
+
+---
+
+# Fluxo Resumido
+
+[Home]  
+ ├──> [Login] -> [Registrar] -> [Perfil]  
+ │      └──> [Recuperar Senha] -> [Nova Senha]  
+ ├──> [Catálogo] -> [Evento n] -> [Opções de compra] -> [Ingressos Evento n] -> [Carrinho] -> [Pagamento]  
+ │        ├──> [Favoritos]  
+ │        └──> [Categorias] -> [Lista Evento Categoria n] -> [Evento n]  
+ ├──> [Carteira] -> [Ativos/Encerrados]  
+ ├──> [Políticas]  
+ ├──> [Suporte] -> [Formulário de Contato]  
+ └──> [Criar Evento] -> [Configuração de Data/Endereço/Ingressos] -> [Salvar]
+
+---
+
 ```
 
-### **Fluxo Detalhado**
-**1. Cadastro de Evento:** Os eventos são a base da aplicação, sendo criados primeiro.
+### Fluxo Detalhado
 
-**2. Associação ao Endereço:** Cada evento é associado a um endereço, permitindo a definição do local.
+1. **Registro de Usuários:**  
+   Os usuários são cadastrados inicialmente para que possam acessar o aplicativo, realizar login e, se for o caso, criar ou adquirir ingressos de eventos.
 
-**3. Configuração de Tickets:** Os tipos de tickets são configurados com base no evento.
+2. **Criação de Evento (Organizador):**  
+   Organizadores criam eventos dentro do sistema, definindo informações básicas como título, descrição e data.
 
-**4. Registro de Usuários:** Usuários são cadastrados para realizar a compra de tickets.
+3. **Associação ao Endereço:**  
+   Cada evento é associado a um endereço, determinando localidade e detalhes de onde ocorrerá.
 
-**5. Emissão de Tickets:** Cada ticket é vinculado a um usuário e a um evento, garantindo rastreabilidade.
+4. **Configuração de Ingressos (Tickets):**  
+   Para cada evento, são definidos tipos e quantidades de ingressos, valores e disponibilidade.
+
+5. **Emissão e Aquisição de Ingressos:**  
+   Após a configuração, os ingressos podem ser adquiridos pelos usuários. Cada ingresso é então vinculado a um usuário específico, garantindo a rastreabilidade e acesso ao evento.
+
 
 ## Requisitos Funcionais
 1. Autenticação
