@@ -151,7 +151,7 @@ Suporte e Políticas:
 ## Wireframes
 
 ### Homepage; Catálogo; Favoritos e Carteira e seus respectivos componentes
-![Homepage; Catalogo; Favoritos e Carteira - Mobile](img\home-catalogo-favoritos-carteira-categorias-mobile.png)
+![Homepage; Catalogo; Favoritos e Carteira - Mobile](img/home-catalogo-favoritos-carteira-categorias-mobile.png)
 
 ### Login; Recuperar senha; Nova senha; Perfil; Registrar;
 ![Login; Recuperar senha; Nova senha; Perfil; Registrar](img/login-registro-perfil-mobile.png)
