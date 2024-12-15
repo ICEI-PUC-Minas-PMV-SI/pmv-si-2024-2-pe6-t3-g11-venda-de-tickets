@@ -154,16 +154,16 @@ Suporte e Políticas:
 ![Homepage; Catalogo; Favoritos e Carteira - Mobile](img\home-catalogo-favoritos-carteira-categorias-mobile.png)
 
 ### Login; Recuperar senha; Nova senha; Perfil; Registrar;
-![Login; Recuperar senha; Nova senha; Perfil; Registrar](img\login-registro-perfil-mobile.png)
+![Login; Recuperar senha; Nova senha; Perfil; Registrar](img/login-registro-perfil-mobile.png)
 
 ### Cadastro de Evento; Visualização de Evento `n`
-![Add Ingresso; Add Endereço; Criar Evento; Evento `n`](img\ingresso-endereco-criarevento-evento-mobile.png)
+![Add Ingresso; Add Endereço; Criar Evento; Evento `n`](img/ingresso-endereco-criarevento-evento-mobile.png)
 
 ### Carrinho; Ingressos; Pagamento
-![Carrinho; Quantidade Ingressos; Pagamento](img\carrinho-quantidade-pagamento-mobile.png)
+![Carrinho; Quantidade Ingressos; Pagamento](img/carrinho-quantidade-pagamento-mobile.png)
 
 ### Políticas; Contato suporte
-![Políticas; Contato suporte](img\politica-suporte-mobile.png)
+![Políticas; Contato suporte](img/politica-suporte-mobile.png)
 
 ## Design Visual
 Seguindo o estilo visual da versão web. A interface tem um visual moderno e direto, usando cores neutras como base e um tom vibrante para destacar botões e links importantes. A tipografia sans-serif garante uma leitura fácil, enquanto ícones do Font Awesome orientam as ações do usuário. Elementos gráficos simples, com bordas sutis e espaçamento organizado, deixam a navegação leve e intuitiva em qualquer dispositivo.
