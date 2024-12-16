@@ -194,11 +194,14 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+O site [TickTag](https://ticktag-frontend.onrender.com/) foi hospedado utilizando a plataforma **Render**, que oferece uma solução prática e escalável para deploy de aplicações modernas. 
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+Para esta aplicação, foram configuradas **três instâncias independentes**:
+
+1. **Backend (Java)**: O backend foi desenvolvido em Java e implantado em uma instância separada no Render. Ele é responsável por gerenciar a lógica de negócios e processar as requisições do frontend, além de interagir com o banco de dados.
+
+2. **Frontend (JavaScript)**: O frontend, desenvolvido em JavaScript, foi hospedado em uma segunda instância. Ele é responsável por apresentar a interface do usuário, consumindo os dados fornecidos pelo backend.
+
+3. **Banco de Dados (PostgreSQL)**: O banco de dados utiliza **PostgreSQL**, hospedado como uma terceira instância gerenciada diretamente pela Render. Essa configuração permite que os dados sejam armazenados de forma segura e acessível pelo backend.
+
+Essa abordagem de instâncias separadas facilita a manutenção, escalabilidade e modularidade da aplicação, garantindo que cada componente funcione de forma otimizada e independente.
