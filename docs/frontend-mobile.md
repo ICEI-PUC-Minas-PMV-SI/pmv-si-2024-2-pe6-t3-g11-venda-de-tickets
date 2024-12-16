@@ -534,4 +534,13 @@ O processo de implantação do aplicativo mobile desenvolvido com **React Native
 
 ## Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+1. **React Native**  
+   - [React Native Documentation](https://reactnative.dev/docs/getting-started): Guia oficial para configuração e uso do React Native.  
+2. **Expo**  
+   - [Expo Documentation](https://docs.expo.dev/): Referência detalhada sobre APIs do Expo, integração de bibliotecas e uso do EAS (Expo Application Services).  
+3. **QRCode React Native**  
+   - [QRCode React Native](https://github.com/cssivision/react-native-qrcode): Repositório oficial e documentação para gerar QR Codes em React Native.  
+4. **Axios**  
+   - [Axios Documentation](https://axios-http.com/docs/intro): Guia oficial para utilizar Axios em projetos JavaScript, incluindo interceptors e tratamento de erros.  
+5. **React Native Paper**  
+   - [React Native Paper Documentation](https://callstack.github.io/react-native-paper/): Guia completo para usar a biblioteca de componentes visuais baseados no Material Design.
