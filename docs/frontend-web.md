@@ -349,4 +349,44 @@ Este teste valida a funcionalidade de aplicar e limpar filtros no componente `Ca
 
 # Referências
 
-  -
+### **Backend: Java com Spring Boot**  
+1. **Documentação Oficial**  
+   - [Spring Boot Documentation](https://spring.io/projects/spring-boot): Guia oficial do Spring Boot com tutoriais e exemplos para configurar e usar recursos do framework.  
+   - [Spring Data JPA](https://spring.io/projects/spring-data-jpa): Documentação para integração com bancos de dados utilizando o JPA.  
+
+2. **Tutoriais e Exemplos**  
+   - [Spring Boot REST API Example](https://www.baeldung.com/spring-boot-rest-api): Tutorial prático para criar uma API RESTful com Spring Boot.  
+   - [Integrating Spring Boot with MySQL/PostgreSQL](https://www.baeldung.com/spring-boot-configure-data-source): Guia para configurar e conectar o Spring Boot a bancos de dados MySQL e PostgreSQL.  
+   - [Best Practices for Building APIs with Spring Boot](https://reflectoring.io/spring-boot-best-practices/): Dicas para criar APIs seguras e escaláveis.  
+
+---
+
+### **Frontend: React com Axios e QR Code React**  
+1. **Documentação Oficial**  
+   - [React Documentation](https://react.dev/): Guia completo para criar interfaces modernas com React.  
+   - [Axios Documentation](https://axios-http.com/docs/intro): Referência oficial para uso do Axios, incluindo configuração e interceptores.  
+   - [QRCode React Library](https://github.com/cssivision/react-native-qrcode): Repositório e documentação oficial para gerar QR Codes em React.
+
+2. **Tutoriais e Exemplos**  
+   - [Building a React Frontend with Axios](https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react-with-axios/): Tutorial prático para consumir APIs REST usando Axios no React.  
+   - [Generating QR Codes in a React App](https://blog.logrocket.com/how-to-generate-qrcodes-in-react/): Guia para criar QR Codes dinâmicos em aplicações React.  
+   - [React + Spring Boot CRUD App](https://www.bezkoder.com/react-spring-boot-crud/): Tutorial completo para integrar React com Spring Boot.
+
+---
+
+### **Banco de Dados: PostgreSQL e MySQL**  
+1. **Documentação Oficial**  
+   - [PostgreSQL Documentation](https://www.postgresql.org/docs/): Guia oficial para instalar, configurar e operar bancos PostgreSQL.  
+   - [MySQL Documentation](https://dev.mysql.com/doc/): Documentação oficial do MySQL para desenvolvimento e administração.
+
+2. **Tutoriais e Exemplos**  
+   - [Spring Boot with PostgreSQL](https://www.baeldung.com/spring-boot-postgresql): Guia para conectar e utilizar PostgreSQL em projetos Spring Boot.  
+   - [Spring Boot with MySQL](https://www.bezkoder.com/spring-boot-mysql/): Tutorial para configurar e integrar o MySQL com Spring Boot.  
+   - [SQL Queries Best Practices](https://use-the-index-luke.com/): Um guia prático sobre como otimizar consultas SQL.  
+
+---
+
+### **Integração Full-Stack: Spring Boot, React e Bancos de Dados**  
+**Tutoriais e Exemplos**  
+   - [Spring Boot + React Full-Stack App](https://www.bezkoder.com/spring-boot-react-full-stack/): Guia completo para criar uma aplicação full-stack usando Spring Boot e React.  
+   - [Connecting React to Spring Boot Backend](https://reflectoring.io/spring-boot-react/): Artigo explicando como conectar uma API Spring Boot ao frontend em React.  
