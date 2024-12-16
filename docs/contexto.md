@@ -200,16 +200,16 @@ O backend foi implementado com Java utilizando o framework Spring Boot, conhecid
 ### **Frontend**  
 - **Linguagem:** JavaScript  
 - **Framework:** React com Next.js  
-- **Bibliotecas:** QR Code React  
-O frontend foi construído em JavaScript utilizando React combinado com Next.js, que permite renderização híbrida (server-side e client-side) e otimização de performance. A biblioteca QR Code React foi integrada para a geração e leitura de QR Codes diretamente no navegador, facilitando a interatividade com o usuário.
+- **Bibliotecas:** QR Code React, Axios  
+O frontend foi construído em JavaScript utilizando React combinado com Next.js, que permite renderização híbrida (server-side e client-side) e otimização de performance. A biblioteca **QR Code React** foi integrada para geração e leitura de QR Codes diretamente no navegador. Para a comunicação com o backend, foi utilizado o **Axios**, que facilita requisições HTTP com suporte para interceptors, tratamento de erros e configurações flexíveis.
 
 ---
 
 ### **Mobile**  
 - **Linguagem:** JavaScript  
 - **Framework:** React Native com Expo  
-- **Bibliotecas:** React Native Paper, QR Code React Native  
-A aplicação móvel foi desenvolvida em React Native com suporte do Expo, uma ferramenta que acelera o processo de desenvolvimento e facilita a integração de funcionalidades nativas. A biblioteca React Native Paper foi utilizada para componentes visuais, enquanto a QR Code React Native permitiu a manipulação e leitura de QR Codes.
+- **Bibliotecas:** React Native Paper, QR Code React Native, Axios  
+A aplicação móvel foi desenvolvida em React Native com suporte do **Expo**, uma ferramenta que acelera o processo de desenvolvimento e facilita a integração de funcionalidades nativas. A biblioteca **React Native Paper** foi utilizada para componentes visuais, enquanto a **QR Code React Native** permitiu a manipulação e leitura de QR Codes. Para a comunicação com APIs do backend, o **Axios** foi integrado, garantindo chamadas HTTP rápidas e eficientes com suporte para customizações.
 
 ---
 
