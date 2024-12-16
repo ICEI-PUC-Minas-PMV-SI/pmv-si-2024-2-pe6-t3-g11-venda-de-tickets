@@ -188,9 +188,40 @@ Essa camada cuida do armazenamento e recuperação de dados. Na arquitetura most
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+O desenvolvimento do sistema utilizou um conjunto robusto de tecnologias modernas para garantir desempenho, escalabilidade e uma experiência de usuário eficiente. A seguir, uma descrição detalhada de cada camada tecnológica utilizada:
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+### **Backend**  
+- **Linguagem:** Java  
+- **Framework:** Spring Boot  
+O backend foi implementado com Java utilizando o framework Spring Boot, conhecido por sua capacidade de desenvolver aplicações robustas e escaláveis. Ele gerencia toda a lógica de negócios, autenticação e interação com o banco de dados.
+
+---
+
+### **Frontend**  
+- **Linguagem:** JavaScript  
+- **Framework:** React com Next.js  
+- **Bibliotecas:** QR Code React  
+O frontend foi construído em JavaScript utilizando React combinado com Next.js, que permite renderização híbrida (server-side e client-side) e otimização de performance. A biblioteca QR Code React foi integrada para a geração e leitura de QR Codes diretamente no navegador, facilitando a interatividade com o usuário.
+
+---
+
+### **Mobile**  
+- **Linguagem:** JavaScript  
+- **Framework:** React Native com Expo  
+- **Bibliotecas:** React Native Paper, QR Code React Native  
+A aplicação móvel foi desenvolvida em React Native com suporte do Expo, uma ferramenta que acelera o processo de desenvolvimento e facilita a integração de funcionalidades nativas. A biblioteca React Native Paper foi utilizada para componentes visuais, enquanto a QR Code React Native permitiu a manipulação e leitura de QR Codes.
+
+---
+
+### **Banco de Dados**  
+- **PostgreSQL e MySQL**  
+Para o armazenamento e gerenciamento de dados, foram utilizados os bancos de dados **PostgreSQL** e **MySQL**, escolhidos por sua confiabilidade e capacidade de atender diferentes necessidades do sistema.
+
+---
+
+### **IDEs Utilizadas**  
+- **Visual Studio Code**: Usado principalmente para o desenvolvimento frontend e mobile, devido à sua leveza, suporte a extensões e integração com ferramentas de versionamento.  
+- **IntelliJ IDEA**: Utilizado para o desenvolvimento do backend em Java, oferecendo recursos avançados como auto-completar inteligente e suporte nativo ao Spring Boot.
 
 ## Hospedagem
 
@@ -203,5 +234,3 @@ Para esta aplicação, foram configuradas **três instâncias independentes**:
 2. **Frontend (JavaScript)**: O frontend, desenvolvido em JavaScript, foi hospedado em uma segunda instância. Ele é responsável por apresentar a interface do usuário, consumindo os dados fornecidos pelo backend.
 
 3. **Banco de Dados (PostgreSQL)**: O banco de dados utiliza **PostgreSQL**, hospedado como uma terceira instância gerenciada diretamente pela Render. Essa configuração permite que os dados sejam armazenados de forma segura e acessível pelo backend.
-
-Essa abordagem de instâncias separadas facilita a manutenção, escalabilidade e modularidade da aplicação, garantindo que cada componente funcione de forma otimizada e independente.
