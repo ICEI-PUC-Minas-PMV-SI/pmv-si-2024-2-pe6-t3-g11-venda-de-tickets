@@ -418,17 +418,109 @@ A modelagem reflete o fluxo de dados atualizado entre as entidades principais, g
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+### **Medidas de Segurança Implementadas no Aplicativo Mobile**
+
+Durante o desenvolvimento do aplicativo mobile utilizando **React Native com Expo**, foram adotadas diversas práticas e ferramentas de segurança para proteger os dados dos usuários e garantir a integridade do sistema. As medidas implementadas estão detalhadas a seguir:
+
+---
+
+#### **1. Armazenamento Seguro de Dados Sensíveis**  
+- Utilizamos o **SecureStore**, fornecido pelo Expo, para o armazenamento seguro de dados sensíveis, como tokens de autenticação. Essa solução garante a criptografia dos dados localmente.  
+- Minimização do uso de dados persistentes no dispositivo, preferindo buscar informações diretamente do backend quando necessário.
+
+---
+
+#### **2. Comunicação Segura com APIs**  
+- Todas as requisições ao backend são realizadas por meio de **HTTPS**, garantindo que os dados em trânsito estejam protegidos contra interceptações.  
+- Implementamos **tokens de autenticação** do tipo JWT (JSON Web Tokens), configurados com expiração e rotação para reduzir riscos de exposição.  
+- Utilizamos o **Axios** para gerenciar as requisições HTTP, configurando interceptors para tratar erros, como expiração de tokens, e reforçando as mensagens de erro para não expor informações sensíveis.
+
+---
+
+#### **3. Gerenciamento de Chaves e Segredos**  
+- Todas as chaves de API e segredos foram armazenados em variáveis de ambiente utilizando o **Secrets Manager** do Expo, evitando sua exposição no código-fonte.  
+- Foram configuradas chaves separadas para cada ambiente (desenvolvimento, homologação e produção), assegurando uma maior organização e controle.
+
+---
+
+#### **4. Prevenção contra Engenharia Reversa**  
+- O código JavaScript foi ofuscado utilizando ferramentas como **Metro Config** e **React Native Obfuscator**, dificultando a análise por engenharia reversa.  
+- No Android, ativamos o **Proguard** para minimizar e ofuscar o código nativo gerado, reforçando a proteção do aplicativo.
+
+---
+
+#### **5. Segurança de Dados em Trânsito**  
+- Implementamos **Certificate Pinning** utilizando bibliotecas como **react-native-cert-pinner**, protegendo a comunicação com o backend contra ataques de intermediário (MITM).  
+- Configuramos validações de headers e parâmetros no backend para evitar injeções de dados maliciosos.
+
+---
+
+#### **6. Controle de Permissões**  
+- O aplicativo solicita apenas as permissões estritamente necessárias, como câmera e localização, em conformidade com as políticas da Google Play Store e App Store.  
+- As permissões foram gerenciadas utilizando as APIs do Expo, com mensagens claras ao usuário sobre os motivos de cada solicitação.
+
+---
+
+#### **7. Atualizações e Verificação de Dependências**  
+- Realizamos atualizações regulares de todas as dependências, incluindo React Native, Expo e Axios, garantindo a eliminação de vulnerabilidades conhecidas.  
+- Utilizamos ferramentas como **npm audit** e **Snyk** para identificar e corrigir possíveis vulnerabilidades em pacotes de terceiros.
+
+---
+
+#### **8. Prevenção contra Captura de Tela e Clonagem**  
+- Implementamos a restrição de capturas de tela em áreas que exibem dados sensíveis, utilizando **react-native-screens** para plataformas Android e iOS.  
+- Configuramos verificações de integridade para assegurar que o aplicativo não fosse executado em ambientes não autorizados ou clonado.
+
+---
+
+#### **9. Logs e Debugging**  
+- Configuramos o sistema de logs para não registrar dados sensíveis em produção, prevenindo a exposição de informações confidenciais.  
+- Garantimos que o **debug mode** e ferramentas de depuração, como o Flipper, estejam desativadas em builds de produção.
+
+---
+
+#### **10. Monitoramento e Resposta**  
+- Integramos a ferramenta **Sentry** para monitorar o desempenho do aplicativo e capturar exceções em tempo real, permitindo identificar e responder rapidamente a falhas de segurança.  
+- Definimos um plano de contingência para atualizações emergenciais, possibilitando a distribuição de correções críticas com agilidade.
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+### **Processo de Implantação do Aplicativo Mobile**
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+O processo de implantação do aplicativo mobile desenvolvido com **React Native utilizando Expo** foi realizado de forma estruturada, aproveitando as ferramentas e serviços disponíveis na plataforma para garantir uma publicação eficiente e confiável. A seguir, descrevemos as etapas envolvidas:
+
+---
+
+#### **1. Configuração do Projeto para Produção**  
+- O aplicativo foi configurado para o ambiente de produção utilizando o **Expo Application Services (EAS)**, que oferece suporte para builds otimizados e controle de configurações específicas para Android e iOS.  
+- Os arquivos de configuração `app.json` e `eas.json` foram ajustados para incluir informações como ícones, splash screens, permissões e variáveis de ambiente apropriadas para a versão final.  
+- Certificados e credenciais necessários para publicação, como chaves de assinatura do Android e perfis de provisionamento do iOS, foram gerenciados pelo Expo.
+
+---
+
+#### **2. Otimização do Aplicativo**  
+- Realizamos a minimização e obfuscação do código para reduzir o tamanho final do aplicativo e dificultar a engenharia reversa.  
+- Removemos dependências e recursos não utilizados para garantir uma aplicação mais leve e rápida.  
+
+---
+
+#### **3. Build do Aplicativo**  
+- Utilizamos o **EAS Build** para gerar as builds de produção para ambas as plataformas (Android e iOS). Esse serviço permitiu configurar e executar builds na nuvem, otimizando o processo de criação de APKs e arquivos IPA.  
+- Foram geradas versões de **APK (Android Package)** para Android e **IPA (iOS App Store Package)** para iOS, garantindo compatibilidade com as diretrizes de ambas as lojas.
+
+---
+
+#### **4. Publicação na Google Play Store e App Store**  
+- **Google Play Store**:  
+  - O APK gerado foi enviado para o Google Play Console.  
+  - Configuramos a descrição do aplicativo, capturas de tela, políticas de privacidade e outros detalhes obrigatórios.  
+  - O aplicativo foi submetido ao processo de revisão e aprovado para publicação.  
+
+- **App Store (iOS)**:  
+  - O arquivo IPA foi carregado no App Store Connect utilizando o **Transporter** ou via upload direto pelo EAS.  
+  - Foram preenchidas todas as informações exigidas, incluindo capturas de tela, classificação etária e políticas de privacidade.  
+  - Após revisão, o aplicativo foi aprovado e disponibilizado na App Store
+
 
 ## Testes
 
